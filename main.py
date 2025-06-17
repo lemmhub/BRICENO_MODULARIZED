@@ -15,11 +15,20 @@ from sklearn.model_selection import train_test_split
 from models import get_models
 from optimize import run_optimization
 from evaluate import evaluate_model
-from plots import generate_all_plots
+from plots import generate_all_plots, generate_individual_plots
 from utils import create_experiment_dirs, setup_logging, save_checkpoint, load_checkpoint
 
 
-def run_optuna_pipeline(data, target_column="target", experiment_name=None, n_trials=200, cv_folds=10, test_size=0.2, seed=23):
+def run_optuna_pipeline(
+    data,
+    target_column="target",
+    experiment_name=None,
+    n_trials=200,
+    cv_folds=10,
+    test_size=0.2,
+    seed=23,
+    inference_runs=100,
+):
     # ==== CONFIGURATION ====
     experiment_name = experiment_name or f"experiment_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     save_dir = Path("MODULARIZED_OPTUNA") / experiment_name
@@ -81,6 +90,8 @@ def run_optuna_pipeline(data, target_column="target", experiment_name=None, n_tr
     dynamic_ncols=True,
     )
 
+    eval_runs = inference_runs
+
 
     for model_name in models_to_evaluate:
         if model_name in completed_models:
@@ -95,16 +106,39 @@ def run_optuna_pipeline(data, target_column="target", experiment_name=None, n_tr
         try:
             with tqdm(total=3, desc=f"⚙️  {model_name} steps", position=1, leave=False) as step_bar:
                 step_bar.set_description(f"⚙️  {model_name}: tuning")
-                best_model, study = run_optimization(model_name, X_trainval, y_trainval, n_trials, cv_folds)
+                best_model, study, cv_r2, cv_rmse = run_optimization(
+                    model_name,
+                    save_dir,
+                    X_trainval,
+                    y_trainval,
+                    n_trials,
+                    cv_folds,
+                )
                 step_bar.update(1)
 
                 step_bar.set_description(f"⚙️  {model_name}: evaluating")
-                eval_results = evaluate_model(best_model, X_test, y_test)
+                eval_results = evaluate_model(
+                    best_model,
+                    X_test,
+                    y_test,
+                    n_inference_runs=eval_runs,
+                    save_dir=save_dir / model_name,
+                    model_name=model_name,
+                )
+                generate_individual_plots(
+                    best_model,
+                    X_test,
+                    y_test,
+                    save_dir / model_name,
+                    model_name,
+                )
                 step_bar.update(1)
 
                 result_entry = {
                     "Model": model_name,
                     **eval_results,
+                    "CV_R2": cv_r2,
+                    "CV_RMSE": cv_rmse,
                     "Study": study
                 }
                 results.append(result_entry)
@@ -129,6 +163,10 @@ def run_optuna_pipeline(data, target_column="target", experiment_name=None, n_tr
 
     logger.info("📈 Generating final analysis and plots")
     generate_all_plots(results, save_dir, y_test)
+    comparison_dir = Path(save_dir) / "comparison"
+    pd.DataFrame(results).to_csv(comparison_dir / "overall_results.csv", index=False)
+    with open(comparison_dir / "overall_results.pkl", "wb") as f:
+        pickle.dump(results, f)
 
     # ==== SUMMARY ====
     logger.info("📋 EXECUTIVE SUMMARY:")

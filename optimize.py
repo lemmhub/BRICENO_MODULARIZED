@@ -6,17 +6,36 @@ from models import get_models
 from tqdm import tqdm
 import pickle
 import os
+from pathlib import Path
 
 
-def run_optimization(model_name, X, y, n_trials, cv):
+def run_optimization(model_name, save_dir, X, y, n_trials, cv):
+    """Run hyperparameter optimization for a given model.
+
+    Returns
+    -------
+    best_model : estimator
+        Fitted model with best found parameters.
+    study : optuna.study.Study
+        Optuna study object containing optimization history.
+    cv_r2 : float
+        Mean cross-validated R² score of the best model.
+    cv_rmse : float
+        Mean cross-validated RMSE of the best model.
+    """
+
     pbar = tqdm(total=n_trials, desc=f"🧪 {model_name} tuning", dynamic_ncols=True, leave=True)
 
     def update_progress_bar(study, trial):
         best_value = study.best_value
         best_params = study.best_trial.params
         trial_number = trial.number
+        best_r2 = max((t.user_attrs.get("r2_mean", float("-inf")) for t in study.trials), default=float("nan"))
+        study.set_user_attr("best_r2", best_r2)
         pbar.update(1)
-        tqdm.write(f"🔁 Trial {trial_number}: Best RMSE={best_value:.6f}, Best Params={best_params}")
+        tqdm.write(
+            f"🔁 Trial {trial_number}: Best RMSE={best_value:.6f}, Best R2={best_r2:.4f}, Best Params={best_params}"
+        )
 
     def objective(trial):
         model_dict = get_models()
@@ -80,24 +99,34 @@ def run_optimization(model_name, X, y, n_trials, cv):
         model = model_dict[model_name].set_params(**params)
 
         r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
-        if r2_scores.mean() < 0.98:
+        r2_mean = r2_scores.mean()
+        if r2_mean < 0.95:
             return float("inf")
 
         rmse_scores = cross_val_score(model, X, y, scoring="neg_root_mean_squared_error", cv=cv)
-        return -rmse_scores.mean()
+        rmse_mean = -rmse_scores.mean()
+
+        trial.set_user_attr("r2_mean", r2_mean)
+        trial.set_user_attr("rmse_mean", rmse_mean)
+
+        return rmse_mean
 
     study = optuna.create_study(direction="minimize")
     study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
     pbar.close()
 
     best_model = get_models()[model_name].set_params(**study.best_params)
-    #Train on full ds
+    # Train on full dataset
     best_model.fit(X, y)
 
-    model_dir = os.path.join("MODULARIZED_OPTUNA", "optuna_studies", model_name)
-    os.makedirs(model_dir, exist_ok=True)
+    cv_r2 = cross_val_score(best_model, X, y, scoring="r2", cv=cv).mean()
+    cv_rmse = -cross_val_score(best_model, X, y, scoring="neg_root_mean_squared_error", cv=cv).mean()
 
-    with open(os.path.join(model_dir, "study.pkl"), "wb") as f:
+    model_dir = Path(save_dir) / model_name
+    model_dir.mkdir(parents=True, exist_ok=True)
+
+    study_path = model_dir / f"{model_name}_study.pkl"
+    with open(study_path, "wb") as f:
         pickle.dump(study, f)
 
-    return best_model, study
+    return best_model, study, cv_r2, cv_rmse

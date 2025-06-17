@@ -5,9 +5,40 @@ import numpy as np
 import seaborn as sns
 from sklearn.metrics import r2_score
 from matplotlib.patches import Patch
+from pathlib import Path
+
+
+def generate_individual_plots(model, X_test, y_test, save_dir, model_name):
+    """Generate and save plots for a single trained model."""
+    save_dir = Path(save_dir)
+    save_dir.mkdir(parents=True, exist_ok=True)
+
+    # Actual vs Predicted
+    y_pred = model.predict(X_test)
+    plt.figure()
+    plt.scatter(y_test, y_pred, alpha=0.3)
+    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], "--k")
+    plt.xlabel("Actual")
+    plt.ylabel("Predicted")
+    plt.title(f"Actual vs Predicted: {model_name}")
+    plt.savefig(save_dir / f"actual_vs_pred_{model_name}.png")
+    plt.close()
+
+    # Residual Distribution
+    residuals = y_test - y_pred
+    plt.figure()
+    sns.histplot(residuals, kde=True)
+    plt.title(f"Residual Distribution: {model_name}")
+    plt.xlabel("Residual")
+    plt.savefig(save_dir / f"residuals_{model_name}.png")
+    plt.close()
 
 
 def generate_all_plots(results, save_dir, y_true):
+    """Generate comparison plots across all models."""
+    save_dir = Path(save_dir) / "comparison"
+    save_dir.mkdir(parents=True, exist_ok=True)
+
     df = pd.DataFrame(results)
 
     # Radar chart
