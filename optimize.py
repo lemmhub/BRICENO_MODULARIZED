@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 def run_optimization(model_name, save_dir, X, y, n_trials, cv):
+
     """Run hyperparameter optimization for a given model.
 
     Returns
@@ -119,8 +120,10 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
     # Train on full dataset
     best_model.fit(X, y)
 
+
     cv_r2 = cross_val_score(best_model, X, y, scoring="r2", cv=cv).mean()
     cv_rmse = -cross_val_score(best_model, X, y, scoring="neg_root_mean_squared_error", cv=cv).mean()
+
 
     model_dir = Path(save_dir) / model_name
     model_dir.mkdir(parents=True, exist_ok=True)
