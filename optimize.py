@@ -6,9 +6,10 @@ from models import get_models
 from tqdm import tqdm
 import pickle
 import os
+from pathlib import Path
 
 
-def run_optimization(model_name, X, y, n_trials, cv):
+def run_optimization(model_name, save_dir, X, y, n_trials, cv):
     pbar = tqdm(total=n_trials, desc=f"🧪 {model_name} tuning", dynamic_ncols=True, leave=True)
 
     def update_progress_bar(study, trial):
@@ -94,10 +95,11 @@ def run_optimization(model_name, X, y, n_trials, cv):
     #Train on full ds
     best_model.fit(X, y)
 
-    model_dir = os.path.join("MODULARIZED_OPTUNA", "optuna_studies", model_name)
-    os.makedirs(model_dir, exist_ok=True)
+    model_dir = Path(save_dir) / model_name
+    model_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(os.path.join(model_dir, "study.pkl"), "wb") as f:
+    study_path = model_dir / f"{model_name}_study.pkl"
+    with open(study_path, "wb") as f:
         pickle.dump(study, f)
 
     return best_model, study

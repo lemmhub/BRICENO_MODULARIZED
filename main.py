@@ -95,7 +95,7 @@ def run_optuna_pipeline(data, target_column="target", experiment_name=None, n_tr
         try:
             with tqdm(total=3, desc=f"⚙️  {model_name} steps", position=1, leave=False) as step_bar:
                 step_bar.set_description(f"⚙️  {model_name}: tuning")
-                best_model, study = run_optimization(model_name, X_trainval, y_trainval, n_trials, cv_folds)
+                best_model, study = run_optimization(model_name, save_dir, X_trainval, y_trainval, n_trials, cv_folds)
                 step_bar.update(1)
 
                 step_bar.set_description(f"⚙️  {model_name}: evaluating")
