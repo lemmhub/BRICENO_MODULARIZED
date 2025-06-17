@@ -84,16 +84,20 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
             if kernel == "rbf":
                 params["gamma"] = trial.suggest_float("gamma", 1e-4, 1.0, log=True)
         elif model_name == "neural_net":
+            solver = trial.suggest_categorical("solver", ["adam", "lbfgs"])
             params = {
                 "hidden_layer_sizes": trial.suggest_categorical("hidden_layer_sizes", [(64,), (128,), (64, 64), (128, 64)]),
                 "activation": trial.suggest_categorical("activation", ["relu", "tanh"]),
-                "solver": trial.suggest_categorical("solver", ["adam", "lbfgs"]),
+                "solver": solver,
                 "alpha": trial.suggest_float("alpha", 1e-5, 1e-1, log=True),
                 "learning_rate_init": trial.suggest_float("learning_rate_init", 1e-4, 1e-1),
-                "batch_size": trial.suggest_categorical("batch_size", ["auto", 32, 64, 128]),
                 "max_iter": trial.suggest_int("max_iter", 200, 1000),
                 "verbose": False,
             }
+            
+            # Only set batch_size for adam solver
+            if solver == "adam":
+                params["batch_size"] = trial.suggest_categorical("batch_size", ["auto", 32, 64, 128])
         else:
             raise ValueError("Unsupported model")
 
@@ -101,7 +105,7 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
 
         r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
         r2_mean = r2_scores.mean()
-        if r2_mean < 0.95:
+        if r2_mean < 0.90:
             return float("inf")
 
         rmse_scores = cross_val_score(model, X, y, scoring="neg_root_mean_squared_error", cv=cv)
