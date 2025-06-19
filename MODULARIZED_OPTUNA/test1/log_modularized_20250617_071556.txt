@@ -46,3 +46,29 @@ Traceback (most recent call last):
     raise TypeError(
 TypeError: got an unexpected keyword argument 'squared'
 2025-06-17 12:58:32,754 - INFO - 🚀 Starting optimization for: svr
+2025-06-18 02:46:43,801 - ERROR - ❌ Error optimizing svr: got an unexpected keyword argument 'squared'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 102, in run_optuna_pipeline
+  File "/home/lmorenom/BRICENO_MODULARIZED/evaluate.py", line 12, in evaluate_model
+    ----------
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 194, in wrapper
+    params = func_sig.bind(*args, **kwargs)
+  File "/usr/lib/python3.10/inspect.py", line 3186, in bind
+    return self._bind(args, kwargs)
+  File "/usr/lib/python3.10/inspect.py", line 3175, in _bind
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'squared'
+2025-06-18 02:46:43,802 - INFO - 🚀 Starting optimization for: neural_net
+2025-06-19 00:06:09,318 - ERROR - ❌ Error optimizing neural_net: got an unexpected keyword argument 'squared'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 102, in run_optuna_pipeline
+  File "/home/lmorenom/BRICENO_MODULARIZED/evaluate.py", line 12, in evaluate_model
+    ----------
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 194, in wrapper
+    params = func_sig.bind(*args, **kwargs)
+  File "/usr/lib/python3.10/inspect.py", line 3186, in bind
+    return self._bind(args, kwargs)
+  File "/usr/lib/python3.10/inspect.py", line 3175, in _bind
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'squared'
+2025-06-19 00:06:09,319 - INFO - 📈 Generating final analysis and plots
