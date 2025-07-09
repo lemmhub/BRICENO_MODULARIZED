@@ -1,0 +1,10 @@
+2025-06-17 14:46:26,130 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-06-17 14:46:26,130 - INFO - 📦 Original shape: (15000, 11)
+2025-06-17 14:46:26,130 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-06-17 14:46:26,131 - INFO - 📐 Performing train-test split.
+2025-06-17 14:46:26,135 - INFO - ✅ After dropna: (14694, 11)
+2025-06-17 14:46:26,135 - INFO - 🚀 Starting optimization for: lightgbm
+2025-06-17 15:32:58,185 - INFO - ✅ Finished evaluation for: lightgbm
+2025-06-17 15:32:58,185 - INFO - 🚀 Starting optimization for: xgboost
+2025-06-19 00:15:34,860 - INFO - ✅ Finished evaluation for: xgboost
+2025-06-19 00:15:34,860 - INFO - 🚀 Starting optimization for: random_forest
