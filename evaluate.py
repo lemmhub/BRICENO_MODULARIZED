@@ -4,8 +4,22 @@ import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from tqdm import trange
 
+try:  # pragma: no cover - torch is optional
+    import torch
+except Exception:  # pragma: no cover
+    torch = None
 
-def evaluate_model(model, X_test, y_test, *, n_inference_runs=100, save_dir=None, model_name="model"):
+
+def evaluate_model(
+    model,
+    X_test,
+    y_test,
+    *,
+    n_inference_runs: int = 100,
+    save_dir=None,
+    model_name: str = "model",
+    use_DL_models: bool = False,
+):
     """Evaluate a trained model.
 
     Parameters
@@ -23,7 +37,14 @@ def evaluate_model(model, X_test, y_test, *, n_inference_runs=100, save_dir=None
         Name used when saving result files.
     """
 
-    y_pred = model.predict(X_test)
+    if use_DL_models and torch is None:
+        raise ImportError("PyTorch is required when use_DL_models=True")
+
+    if use_DL_models:
+        with torch.no_grad():
+            y_pred = model.predict(X_test)
+    else:
+        y_pred = model.predict(X_test)
 
     r2 = r2_score(y_test, y_pred)
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
@@ -31,10 +52,17 @@ def evaluate_model(model, X_test, y_test, *, n_inference_runs=100, save_dir=None
 
     # Measure inference time
     timings = []
-    for _ in trange(n_inference_runs, desc="🕒 Measuring Inference Time"):
-        start = time.time()
-        _ = model.predict(X_test)
-        timings.append((time.time() - start) * 1000)
+    if use_DL_models:
+        with torch.no_grad():
+            for _ in trange(n_inference_runs, desc="🕒 Measuring Inference Time"):
+                start = time.time()
+                _ = model.predict(X_test)
+                timings.append((time.time() - start) * 1000)
+    else:
+        for _ in trange(n_inference_runs, desc="🕒 Measuring Inference Time"):
+            start = time.time()
+            _ = model.predict(X_test)
+            timings.append((time.time() - start) * 1000)
 
     timing_mean = np.mean(timings)
     timing_std = np.std(timings)
