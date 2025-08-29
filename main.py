@@ -19,6 +19,8 @@ from plots import generate_all_plots, generate_individual_plots
 from utils import create_experiment_dirs, setup_logging, save_checkpoint, load_checkpoint
 
 
+use_DL_models: bool = False
+
 def run_optuna_pipeline(
     data,
     target_column="target",
@@ -28,11 +30,12 @@ def run_optuna_pipeline(
     test_size=0.2,
     seed=23,
     inference_runs=100,
+    use_dl_models: bool = use_DL_models,
 ):
     # ==== CONFIGURATION ====
     experiment_name = experiment_name or f"experiment_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     save_dir = Path("MODULARIZED_OPTUNA") / experiment_name
-    models_to_evaluate = ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
+    models_to_evaluate = ["mlp", "lstm", "gru"] if use_dl_models else ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
     checkpoint_path = save_dir / "checkpoint.pkl"
 
     # ==== SETUP ====
@@ -115,7 +118,8 @@ def run_optuna_pipeline(
                     n_trials,
                     cv_folds,
                 )
-
+                best_params = study.best_params
+                logger.info(f"🔧 Best parameters for {model_name}: {best_params}")
 
                 step_bar.update(1)
 
@@ -127,6 +131,15 @@ def run_optuna_pipeline(
                     n_inference_runs=eval_runs,
                     save_dir=save_dir / model_name,
                     model_name=model_name,
+                )
+                logger.info(f"📊 {model_name} evaluation metrics:")
+                logger.info(f"   • R²: {eval_results['R2']:.4f}")
+                logger.info(f"   • RMSE: {eval_results['RMSE']:.6f}")
+                logger.info(f"   • MAE: {eval_results['MAE']:.6f}")
+                logger.info(
+                    "   • Inference Time: "
+                    f"{eval_results['Inference_Time_Mean_ms']:.4f} ± "
+                    f"{eval_results['Inference_Time_Std_ms']:.4f} ms"
                 )
                 generate_individual_plots(
                     best_model,
@@ -142,6 +155,7 @@ def run_optuna_pipeline(
                     **eval_results,
                     "CV_R2": cv_r2,
                     "CV_RMSE": cv_rmse,
+                    "Best_Params": best_params,
                     "Study": study
                 }
                 results.append(result_entry)
@@ -165,9 +179,10 @@ def run_optuna_pipeline(
 
 
     logger.info("📈 Generating final analysis and plots")
-    generate_all_plots(results, save_dir, y_test)
+    generate_all_plots(results, save_dir, X_test, y_test)
     comparison_dir = Path(save_dir) / "comparison"
-    pd.DataFrame(results).to_csv(comparison_dir / "overall_results.csv", index=False)
+    results_df = pd.DataFrame([{k: v for k, v in r.items() if k != "Study"} for r in results])
+    results_df.to_csv(comparison_dir / "overall_results.csv", index=False)
     with open(comparison_dir / "overall_results.pkl", "wb") as f:
         pickle.dump(results, f)
 

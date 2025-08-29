@@ -9,7 +9,54 @@ import os
 from pathlib import Path
 
 
-def run_optimization(model_name, save_dir, X, y, n_trials, cv):
+def suggest_mlp(trial):
+    """Suggest hyperparameters for a basic MLP model.
+
+    The suggested parameters are intentionally lightweight to avoid
+    introducing heavy deep learning dependencies in environments where
+    frameworks such as PyTorch or TensorFlow may not be available.
+    """
+
+    return {
+        "n_layers": trial.suggest_int("mlp_n_layers", 1, 3),
+        "hidden_size": trial.suggest_int("mlp_hidden_size", 16, 256),
+        "dropout": trial.suggest_float("mlp_dropout", 0.0, 0.5),
+        "learning_rate": trial.suggest_float("mlp_learning_rate", 1e-5, 1e-1, log=True),
+        "batch_size": trial.suggest_categorical("mlp_batch_size", [32, 64, 128]),
+        "epochs": trial.suggest_int("mlp_epochs", 10, 200),
+        "loss": trial.suggest_categorical("mlp_loss", ["mse", "mae"]),
+    }
+
+
+def suggest_lstm(trial):
+    """Suggest hyperparameters for an LSTM model."""
+
+    return {
+        "n_layers": trial.suggest_int("lstm_n_layers", 1, 3),
+        "hidden_size": trial.suggest_int("lstm_hidden_size", 16, 256),
+        "dropout": trial.suggest_float("lstm_dropout", 0.0, 0.5),
+        "learning_rate": trial.suggest_float("lstm_learning_rate", 1e-5, 1e-1, log=True),
+        "batch_size": trial.suggest_categorical("lstm_batch_size", [32, 64, 128]),
+        "epochs": trial.suggest_int("lstm_epochs", 10, 200),
+        "loss": trial.suggest_categorical("lstm_loss", ["mse", "mae"]),
+    }
+
+
+def suggest_gru(trial):
+    """Suggest hyperparameters for a GRU model."""
+
+    return {
+        "n_layers": trial.suggest_int("gru_n_layers", 1, 3),
+        "hidden_size": trial.suggest_int("gru_hidden_size", 16, 256),
+        "dropout": trial.suggest_float("gru_dropout", 0.0, 0.5),
+        "learning_rate": trial.suggest_float("gru_learning_rate", 1e-5, 1e-1, log=True),
+        "batch_size": trial.suggest_categorical("gru_batch_size", [32, 64, 128]),
+        "epochs": trial.suggest_int("gru_epochs", 10, 200),
+        "loss": trial.suggest_categorical("gru_loss", ["mse", "mae"]),
+    }
+
+
+def run_optimization(model_name, save_dir, X, y, n_trials, cv, use_DL_models=False):
 
     """Run hyperparameter optimization for a given model.
 
@@ -40,6 +87,22 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
 
     def objective(trial):
         model_dict = get_models()
+
+        if use_DL_models:
+            if model_name == "mlp":
+                suggest_mlp(trial)
+            elif model_name == "lstm":
+                suggest_lstm(trial)
+            elif model_name == "gru":
+                suggest_gru(trial)
+            else:
+                raise ValueError("Unsupported model")
+
+            # Deep learning training and evaluation are outside the scope of
+            # this helper-based suggestion. Returning infinity ensures such
+            # branches do not interfere with classical model optimization when
+            # accidentally triggered.
+            return float("inf")
 
         if model_name == "lightgbm":
             params = {
@@ -94,7 +157,7 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
                 "max_iter": trial.suggest_int("max_iter", 200, 1000),
                 "verbose": False,
             }
-            
+
             # Only set batch_size for adam solver
             if solver == "adam":
                 params["batch_size"] = trial.suggest_categorical("batch_size", ["auto", 32, 64, 128])
@@ -123,6 +186,7 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
     best_model = get_models()[model_name].set_params(**study.best_params)
     # Train on full dataset
     best_model.fit(X, y)
+    study.user_attrs["final_model"] = best_model
 
 
     cv_r2 = cross_val_score(best_model, X, y, scoring="r2", cv=cv).mean()
