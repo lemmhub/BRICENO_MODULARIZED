@@ -19,6 +19,8 @@ from plots import generate_all_plots, generate_individual_plots
 from utils import create_experiment_dirs, setup_logging, save_checkpoint, load_checkpoint
 
 
+use_DL_models: bool = False
+
 def run_optuna_pipeline(
     data,
     target_column="target",
@@ -28,11 +30,12 @@ def run_optuna_pipeline(
     test_size=0.2,
     seed=23,
     inference_runs=100,
+    use_dl_models: bool = use_DL_models,
 ):
     # ==== CONFIGURATION ====
     experiment_name = experiment_name or f"experiment_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     save_dir = Path("MODULARIZED_OPTUNA") / experiment_name
-    models_to_evaluate = ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
+    models_to_evaluate = ["mlp", "lstm", "gru"] if use_dl_models else ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
     checkpoint_path = save_dir / "checkpoint.pkl"
 
     # ==== SETUP ====
