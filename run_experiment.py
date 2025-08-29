@@ -2,7 +2,7 @@ import argparse
 from tqdm import tqdm
 from main import run_optuna_pipeline
 
-def run_main_pipeline(experiment_name=None, trials=200, cv=10, test_size=0.2, inference_runs=100, use_dl_models=False):
+def run_main_pipeline(experiment_name=None, trials=200, cv=10, test_size=0.2, inference_runs=100, use_dl_models=True):
     import pandas as pd
 
     files = ["DS_OCV_1.xlsx", "DS_OCV_2.xlsx", "DS_OCV_3.xlsx"]

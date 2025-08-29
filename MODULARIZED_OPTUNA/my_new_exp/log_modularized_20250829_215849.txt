@@ -1,0 +1,9 @@
+2025-08-29 21:58:49,105 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-08-29 21:58:49,106 - INFO - 📦 Original shape: (15000, 11)
+2025-08-29 21:58:49,106 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-08-29 21:58:49,125 - INFO - 🔁 Loading cached train-test split.
+2025-08-29 21:58:49,146 - INFO - ✅ After dropna: (14694, 11)
+2025-08-29 21:58:49,147 - INFO - 🚀 Starting optimization for: lightgbm
+2025-08-29 21:58:55,211 - INFO - 🔁 Trial 0: Best RMSE=0.043960, Best R2=0.9778, Best Params={'num_leaves': 70, 'learning_rate': 0.2683223542580658, 'n_estimators': 454, 'max_depth': 8, 'min_child_samples': 29, 'subsample': 0.6795133975853672, 'colsample_bytree': 0.7492125493652756}
+2025-08-29 21:59:03,795 - INFO - 🔁 Trial 1: Best RMSE=0.041583, Best R2=0.9801, Best Params={'num_leaves': 98, 'learning_rate': 0.16362842085333393, 'n_estimators': 673, 'max_depth': 7, 'min_child_samples': 15, 'subsample': 0.818971012003104, 'colsample_bytree': 0.7320958071515553}
+2025-08-29 21:59:07,143 - INFO - 🔁 Trial 2: Best RMSE=0.041583, Best R2=0.9801, Best Params={'num_leaves': 98, 'learning_rate': 0.16362842085333393, 'n_estimators': 673, 'max_depth': 7, 'min_child_samples': 15, 'subsample': 0.818971012003104, 'colsample_bytree': 0.7320958071515553}
