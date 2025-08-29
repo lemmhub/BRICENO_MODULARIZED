@@ -18,7 +18,7 @@ def evaluate_model(
     n_inference_runs: int = 100,
     save_dir=None,
     model_name: str = "model",
-    use_DL_models: bool = False,
+    use_dl_models: bool = True,
 ):
     """Evaluate a trained model.
 
@@ -35,12 +35,14 @@ def evaluate_model(
         ``individual_result_<model_name>.csv`` and ``.pkl``.
     model_name : str, optional
         Name used when saving result files.
+        use_dl_models : bool, optional
+        If True, run predictions within a ``torch.no_grad`` context.
     """
 
-    if use_DL_models and torch is None:
-        raise ImportError("PyTorch is required when use_DL_models=True")
+    if use_dl_models and torch is None:
+        raise ImportError("PyTorch is required when use_dl_models=True")
 
-    if use_DL_models:
+    if use_dl_models:
         with torch.no_grad():
             y_pred = model.predict(X_test)
     else:
@@ -52,7 +54,7 @@ def evaluate_model(
 
     # Measure inference time
     timings = []
-    if use_DL_models:
+    if use_dl_models:
         with torch.no_grad():
             for _ in trange(n_inference_runs, desc="🕒 Measuring Inference Time"):
                 start = time.time()
