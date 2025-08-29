@@ -18,6 +18,16 @@ def suggest_mlp(trial):
         "loss": trial.suggest_categorical("mlp_loss", ["mse", "mae"]),
     }
 
+def suggest_torch_mlp(trial):
+    """Suggest hyperparameters for TorchMLPRegressor."""
+    return {
+        "hidden_dim": trial.suggest_int("torch_mlp_hidden_dim", 16, 256),
+        "lr": trial.suggest_float("torch_mlp_lr", 1e-5, 1e-1, log=True),
+        "batch_size": trial.suggest_categorical("torch_mlp_batch_size", [32, 64, 128]),
+        "epochs": trial.suggest_int("torch_mlp_epochs", 10, 200),
+    }
+
+
 
 def suggest_lstm(trial):
     """Suggest hyperparameters for an LSTM model."""
@@ -96,18 +106,17 @@ def run_optimization(
             input_dim=X.shape[1] if use_DL_models else None,
         )
 
-        if use_DL_models and model_name in {"mlp", "lstm", "gru", "torch_mlp"}:
-            if model_name == "mlp":
-                suggest_mlp(trial)
-            elif model_name == "lstm":
-                suggest_lstm(trial)
-            elif model_name == "gru":
-                suggest_gru(trial)
-            else:
-                raise ValueError("Unsupported model")
-            return float("inf")
+        dl_params_map = {
+            "torch_mlp": suggest_torch_mlp,
+            "mlp": suggest_mlp,
+            "lstm": suggest_lstm,
+            "gru": suggest_gru,
+        }
 
-        if model_name == "lightgbm":
+        if use_DL_models and model_name in dl_params_map:
+            params = dl_params_map[model_name](trial)
+        elif model_name == "lightgbm":
+
             params = {
                 "num_leaves": trial.suggest_int("num_leaves", 20, 300),
                 "learning_rate": trial.suggest_float("learning_rate", 1e-3, 0.3),
@@ -171,14 +180,15 @@ def run_optimization(
 
         r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
         r2_mean = r2_scores.mean()
-        if r2_mean < 0.90:
-            return float("inf")
+        
 
         rmse_scores = cross_val_score(model, X, y, scoring="neg_root_mean_squared_error", cv=cv)
         rmse_mean = -rmse_scores.mean()
 
         trial.set_user_attr("r2_mean", r2_mean)
         trial.set_user_attr("rmse_mean", rmse_mean)
+        if r2_mean < 0.90:
+            return float("inf")
 
         return rmse_mean
 

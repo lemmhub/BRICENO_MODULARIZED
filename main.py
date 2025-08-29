@@ -126,7 +126,7 @@ def run_optuna_pipeline(
                     n_trials,
                     cv_folds,
                     logger,
-                    use_dl_models,
+                    use_dl_models=True,
                 )
                 best_params = study.best_params
                 logger.info(f"🔧 Best parameters for {model_name}: {best_params}")
