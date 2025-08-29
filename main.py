@@ -19,7 +19,7 @@ from plots import generate_all_plots, generate_individual_plots
 from utils import create_experiment_dirs, setup_logging, save_checkpoint, load_checkpoint
 
 
-use_DL_models: bool = False
+use_DL_models: bool = True
 
 def run_optuna_pipeline(
     data,
@@ -35,7 +35,15 @@ def run_optuna_pipeline(
     # ==== CONFIGURATION ====
     experiment_name = experiment_name or f"experiment_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     save_dir = Path("MODULARIZED_OPTUNA") / experiment_name
-    models_to_evaluate = ["mlp", "lstm", "gru"] if use_dl_models else ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
+    #models_to_evaluate = ["mlp", "lstm", "gru"] if use_dl_models else ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
+    models_to_evaluate = [
+        "torch_mlp",
+        "mlp",
+        "lstm",
+        "gru",
+    ] if use_dl_models else ["lightgbm", "xgboost", "random_forest", "svr", "neural_net"]
+
+    
     checkpoint_path = save_dir / "checkpoint.pkl"
 
     # ==== SETUP ====
@@ -118,6 +126,7 @@ def run_optuna_pipeline(
                     n_trials,
                     cv_folds,
                     logger,
+                    use_dl_models,
                 )
                 best_params = study.best_params
                 logger.info(f"🔧 Best parameters for {model_name}: {best_params}")

@@ -35,7 +35,7 @@ def suggest_lstm(trial):
 def suggest_gru(trial):
     """Suggest hyperparameters for a GRU model."""
     return {
-        "n_layers": trial.suggest_int("gru_n_layers", 1, 3),
+        "num_layers": trial.suggest_int("gru_n_layers", 1, 3),
         "hidden_size": trial.suggest_int("gru_hidden_size", 16, 256),
         "dropout": trial.suggest_float("gru_dropout", 0.0, 0.5),
         "learning_rate": trial.suggest_float("gru_learning_rate", 1e-5, 1e-1, log=True),

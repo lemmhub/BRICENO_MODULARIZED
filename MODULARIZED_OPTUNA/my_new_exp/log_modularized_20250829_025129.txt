@@ -1,0 +1,13 @@
+2025-08-29 02:51:29,119 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-08-29 02:51:29,120 - INFO - 📦 Original shape: (15000, 11)
+2025-08-29 02:51:29,120 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-08-29 02:51:29,122 - INFO - 🔁 Loading cached train-test split.
+2025-08-29 02:51:29,122 - INFO - ✅ After dropna: (14694, 11)
+2025-08-29 02:51:29,123 - INFO - 🚀 Starting optimization for: lightgbm
+2025-08-29 02:51:29,771 - INFO - 🔁 Trial 0: Best RMSE=0.052636, Best R2=0.9681, Best Params={'num_leaves': 257, 'learning_rate': 0.06092216182901865, 'n_estimators': 184, 'max_depth': 3, 'min_child_samples': 24, 'subsample': 0.8812737805340831, 'colsample_bytree': 0.777355738752786}
+2025-08-29 02:51:31,494 - INFO - 🔁 Trial 1: Best RMSE=0.039895, Best R2=0.9817, Best Params={'num_leaves': 205, 'learning_rate': 0.2096713765976233, 'n_estimators': 394, 'max_depth': 4, 'min_child_samples': 17, 'subsample': 0.6163085681813839, 'colsample_bytree': 0.7281819144587675}
+2025-08-29 02:51:32,572 - INFO - 🔁 Trial 2: Best RMSE=0.039895, Best R2=0.9817, Best Params={'num_leaves': 205, 'learning_rate': 0.2096713765976233, 'n_estimators': 394, 'max_depth': 4, 'min_child_samples': 17, 'subsample': 0.6163085681813839, 'colsample_bytree': 0.7281819144587675}
+2025-08-29 02:51:36,335 - INFO - 🔁 Trial 3: Best RMSE=0.037466, Best R2=0.9838, Best Params={'num_leaves': 282, 'learning_rate': 0.0595041071659644, 'n_estimators': 556, 'max_depth': 5, 'min_child_samples': 13, 'subsample': 0.9140022048414114, 'colsample_bytree': 0.7696792079824518}
+2025-08-29 02:51:41,513 - INFO - 🔁 Trial 4: Best RMSE=0.037466, Best R2=0.9838, Best Params={'num_leaves': 282, 'learning_rate': 0.0595041071659644, 'n_estimators': 556, 'max_depth': 5, 'min_child_samples': 13, 'subsample': 0.9140022048414114, 'colsample_bytree': 0.7696792079824518}
+2025-08-29 02:51:42,118 - INFO - 🔁 Trial 5: Best RMSE=0.037466, Best R2=0.9838, Best Params={'num_leaves': 282, 'learning_rate': 0.0595041071659644, 'n_estimators': 556, 'max_depth': 5, 'min_child_samples': 13, 'subsample': 0.9140022048414114, 'colsample_bytree': 0.7696792079824518}
+2025-08-29 02:51:47,133 - INFO - 🔁 Trial 6: Best RMSE=0.037466, Best R2=0.9838, Best Params={'num_leaves': 282, 'learning_rate': 0.0595041071659644, 'n_estimators': 556, 'max_depth': 5, 'min_child_samples': 13, 'subsample': 0.9140022048414114, 'colsample_bytree': 0.7696792079824518}
