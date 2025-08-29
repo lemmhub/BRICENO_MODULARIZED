@@ -123,6 +123,7 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv):
     best_model = get_models()[model_name].set_params(**study.best_params)
     # Train on full dataset
     best_model.fit(X, y)
+    study.user_attrs["final_model"] = best_model
 
 
     cv_r2 = cross_val_score(best_model, X, y, scoring="r2", cv=cv).mean()

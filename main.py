@@ -165,7 +165,7 @@ def run_optuna_pipeline(
 
 
     logger.info("📈 Generating final analysis and plots")
-    generate_all_plots(results, save_dir, y_test)
+    generate_all_plots(results, save_dir, X_test, y_test)
     comparison_dir = Path(save_dir) / "comparison"
     pd.DataFrame(results).to_csv(comparison_dir / "overall_results.csv", index=False)
     with open(comparison_dir / "overall_results.pkl", "wb") as f:
