@@ -118,7 +118,8 @@ def run_optuna_pipeline(
                     n_trials,
                     cv_folds,
                 )
-
+                best_params = study.best_params
+                logger.info(f"🔧 Best parameters for {model_name}: {best_params}")
 
                 step_bar.update(1)
 
@@ -154,6 +155,7 @@ def run_optuna_pipeline(
                     **eval_results,
                     "CV_R2": cv_r2,
                     "CV_RMSE": cv_rmse,
+                    "Best_Params": best_params,
                     "Study": study
                 }
                 results.append(result_entry)
@@ -179,7 +181,8 @@ def run_optuna_pipeline(
     logger.info("📈 Generating final analysis and plots")
     generate_all_plots(results, save_dir, X_test, y_test)
     comparison_dir = Path(save_dir) / "comparison"
-    pd.DataFrame(results).to_csv(comparison_dir / "overall_results.csv", index=False)
+    results_df = pd.DataFrame([{k: v for k, v in r.items() if k != "Study"} for r in results])
+    results_df.to_csv(comparison_dir / "overall_results.csv", index=False)
     with open(comparison_dir / "overall_results.pkl", "wb") as f:
         pickle.dump(results, f)
 
