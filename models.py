@@ -240,7 +240,8 @@ class GRURegressor(BaseEstimator, RegressorMixin):
             out = self.fc_(out[:, -1, :])
         return out.cpu().numpy().flatten()
 
-def get_models(*, use_DL_models: bool = True, input_dim: int | None = None):
+
+def get_models(*, use_dl_models: bool = True, input_dim: int | None = None):
     """Return a dictionary of models to evaluate."""
     models = {
         "lightgbm": lgb.LGBMRegressor(verbose=-1),
@@ -250,11 +251,11 @@ def get_models(*, use_DL_models: bool = True, input_dim: int | None = None):
         "neural_net": SklearnMLPRegressor(max_iter=1000),
     }
     
-    if use_DL_models:
+    if use_dl_models:
         if TorchMLPRegressor is None:
             raise ImportError("PyTorch is required for deep learning models")
         if input_dim is None:
-            raise ValueError("input_dim must be provided when use_DL_models=True")
+            raise ValueError("input_dim must be provided when use_dl_models=True")
         models.update(
             {
                 "torch_mlp": TorchMLPRegressor(input_dim=input_dim),
