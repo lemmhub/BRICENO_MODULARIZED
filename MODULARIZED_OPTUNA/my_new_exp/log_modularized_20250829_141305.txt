@@ -1,0 +1,36 @@
+2025-08-29 14:13:05,578 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-08-29 14:13:05,578 - INFO - 📦 Original shape: (15000, 11)
+2025-08-29 14:13:05,578 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-08-29 14:13:05,579 - INFO - 🔁 Loading cached train-test split.
+2025-08-29 14:13:05,579 - INFO - ✅ After dropna: (14694, 11)
+2025-08-29 14:13:05,580 - INFO - 🚀 Starting optimization for: lightgbm
+2025-08-29 14:13:05,580 - ERROR - ❌ Error optimizing lightgbm: run_optimization() got an unexpected keyword argument 'use_dl_models'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+TypeError: run_optimization() got an unexpected keyword argument 'use_dl_models'
+2025-08-29 14:13:05,580 - INFO - 🚀 Starting optimization for: xgboost
+2025-08-29 14:13:05,580 - ERROR - ❌ Error optimizing xgboost: run_optimization() got an unexpected keyword argument 'use_dl_models'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+TypeError: run_optimization() got an unexpected keyword argument 'use_dl_models'
+2025-08-29 14:13:05,580 - INFO - 🚀 Starting optimization for: random_forest
+2025-08-29 14:13:05,580 - ERROR - ❌ Error optimizing random_forest: run_optimization() got an unexpected keyword argument 'use_dl_models'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+TypeError: run_optimization() got an unexpected keyword argument 'use_dl_models'
+2025-08-29 14:13:05,581 - INFO - 🚀 Starting optimization for: svr
+2025-08-29 14:13:05,581 - ERROR - ❌ Error optimizing svr: run_optimization() got an unexpected keyword argument 'use_dl_models'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+TypeError: run_optimization() got an unexpected keyword argument 'use_dl_models'
+2025-08-29 14:13:05,581 - INFO - 🚀 Starting optimization for: neural_net
+2025-08-29 14:13:05,581 - ERROR - ❌ Error optimizing neural_net: run_optimization() got an unexpected keyword argument 'use_dl_models'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+TypeError: run_optimization() got an unexpected keyword argument 'use_dl_models'
+2025-08-29 14:13:05,581 - INFO - 📈 Generating final analysis and plots

@@ -40,6 +40,8 @@ def generate_all_plots(results, save_dir, X_test, y_true):
     save_dir.mkdir(parents=True, exist_ok=True)
 
     df = pd.DataFrame(results)
+    if df.empty or not {"Model", "R2"}.issubset(df.columns):
+        raise ValueError("No valid results with 'Model' and 'R2' columns to plot.")
 
     # Bar chart of R² scores
     ax = df.plot.bar(x="Model", y="R2")
