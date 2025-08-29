@@ -63,7 +63,7 @@ def run_optimization(
     n_trials,
     cv,
     logger,
-    use_DL_models: bool = False,
+    use_dl_models: bool = True,
 ):
     """Run hyperparameter optimization for a given model.
 
@@ -81,7 +81,7 @@ def run_optimization(
         Number of cross-validation folds.
     logger : logging.Logger
         Logger for recording progress messages.
-    use_DL_models : bool, optional
+    use_dl_models : bool, optional
         Include deep-learning models when True.
     """
 
@@ -102,8 +102,8 @@ def run_optimization(
 
     def objective(trial):
         model_dict = get_models(
-            use_DL_models=use_DL_models,
-            input_dim=X.shape[1] if use_DL_models else None,
+            use_dl_models=use_dl_models,
+            input_dim=X.shape[1] if use_dl_models else None,
         )
 
         dl_params_map = {
@@ -113,7 +113,7 @@ def run_optimization(
             "gru": suggest_gru,
         }
 
-        if use_DL_models and model_name in dl_params_map:
+        if use_dl_models and model_name in dl_params_map:
             params = dl_params_map[model_name](trial)
         elif model_name == "lightgbm":
 
@@ -197,7 +197,7 @@ def run_optimization(
     pbar.close()
 
     best_model = get_models(
-        use_DL_models=use_DL_models, input_dim=X.shape[1] if use_DL_models else None
+        use_dl_models=use_dl_models, input_dim=X.shape[1] if use_dl_models else None
     )[model_name].set_params(**study.best_params)
 
     best_model.fit(X, y)
