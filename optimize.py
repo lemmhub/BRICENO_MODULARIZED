@@ -1,21 +1,13 @@
-# optimize.py
 import optuna
 from sklearn.model_selection import cross_val_score
-from sklearn.metrics import r2_score
 from models import get_models
 from tqdm import tqdm
 import pickle
-import os
 from pathlib import Path
 
+
 def suggest_mlp(trial):
-    """Suggest hyperparameters for a basic MLP model.
-
-    The suggested parameters are intentionally lightweight to avoid
-    introducing heavy deep learning dependencies in environments where
-    frameworks such as PyTorch or TensorFlow may not be available.
-    """
-
+    """Suggest hyperparameters for a basic MLP model."""
     return {
         "n_layers": trial.suggest_int("mlp_n_layers", 1, 3),
         "hidden_size": trial.suggest_int("mlp_hidden_size", 16, 256),
@@ -29,7 +21,6 @@ def suggest_mlp(trial):
 
 def suggest_lstm(trial):
     """Suggest hyperparameters for an LSTM model."""
-
     return {
         "n_layers": trial.suggest_int("lstm_n_layers", 1, 3),
         "hidden_size": trial.suggest_int("lstm_hidden_size", 16, 256),
@@ -43,7 +34,6 @@ def suggest_lstm(trial):
 
 def suggest_gru(trial):
     """Suggest hyperparameters for a GRU model."""
-
     return {
         "n_layers": trial.suggest_int("gru_n_layers", 1, 3),
         "hidden_size": trial.suggest_int("gru_hidden_size", 16, 256),
@@ -54,8 +44,17 @@ def suggest_gru(trial):
         "loss": trial.suggest_categorical("gru_loss", ["mse", "mae"]),
     }
 
-  
-def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_models=False):
+
+def run_optimization(
+    model_name,
+    save_dir,
+    X,
+    y,
+    n_trials,
+    cv,
+    logger,
+    use_DL_models: bool = False,
+):
     """Run hyperparameter optimization for a given model.
 
     Parameters
@@ -72,17 +71,8 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_mo
         Number of cross-validation folds.
     logger : logging.Logger
         Logger for recording progress messages.
-
-    Returns
-    -------
-    best_model : estimator
-        Fitted model with best found parameters.
-    study : optuna.study.Study
-        Optuna study object containing optimization history.
-    cv_r2 : float
-        Mean cross-validated R² score of the best model.
-    cv_rmse : float
-        Mean cross-validated RMSE of the best model.
+    use_DL_models : bool, optional
+        Include deep-learning models when True.
     """
 
     pbar = tqdm(total=n_trials, desc=f"🧪 {model_name} tuning", dynamic_ncols=True, leave=True)
@@ -101,9 +91,12 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_mo
         logger.info(message)
 
     def objective(trial):
-        model_dict = get_models()
+        model_dict = get_models(
+            use_DL_models=use_DL_models,
+            input_dim=X.shape[1] if use_DL_models else None,
+        )
 
-        if use_DL_models:
+        if use_DL_models and model_name in {"mlp", "lstm", "gru", "torch_mlp"}:
             if model_name == "mlp":
                 suggest_mlp(trial)
             elif model_name == "lstm":
@@ -112,11 +105,6 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_mo
                 suggest_gru(trial)
             else:
                 raise ValueError("Unsupported model")
-
-            # Deep learning training and evaluation are outside the scope of
-            # this helper-based suggestion. Returning infinity ensures such
-            # branches do not interfere with classical model optimization when
-            # accidentally triggered.
             return float("inf")
 
         if model_name == "lightgbm":
@@ -164,7 +152,9 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_mo
         elif model_name == "neural_net":
             solver = trial.suggest_categorical("solver", ["adam", "lbfgs"])
             params = {
-                "hidden_layer_sizes": trial.suggest_categorical("hidden_layer_sizes", [(64,), (128,), (64, 64), (128, 64)]),
+                "hidden_layer_sizes": trial.suggest_categorical(
+                    "hidden_layer_sizes", [(64,), (128,), (64, 64), (128, 64)]
+                ),
                 "activation": trial.suggest_categorical("activation", ["relu", "tanh"]),
                 "solver": solver,
                 "alpha": trial.suggest_float("alpha", 1e-5, 1e-1, log=True),
@@ -172,8 +162,6 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_mo
                 "max_iter": trial.suggest_int("max_iter", 200, 1000),
                 "verbose": False,
             }
-
-            # Only set batch_size for adam solver
             if solver == "adam":
                 params["batch_size"] = trial.suggest_categorical("batch_size", ["auto", 32, 64, 128])
         else:
@@ -198,15 +186,15 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_mo
     study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
     pbar.close()
 
-    best_model = get_models()[model_name].set_params(**study.best_params)
-    # Train on full dataset
+    best_model = get_models(
+        use_DL_models=use_DL_models, input_dim=X.shape[1] if use_DL_models else None
+    )[model_name].set_params(**study.best_params)
+
     best_model.fit(X, y)
     study.user_attrs["final_model"] = best_model
 
-
     cv_r2 = cross_val_score(best_model, X, y, scoring="r2", cv=cv).mean()
     cv_rmse = -cross_val_score(best_model, X, y, scoring="neg_root_mean_squared_error", cv=cv).mean()
-
 
     model_dir = Path(save_dir) / model_name
     model_dir.mkdir(parents=True, exist_ok=True)
