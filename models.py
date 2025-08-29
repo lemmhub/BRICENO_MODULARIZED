@@ -243,26 +243,30 @@ class GRURegressor(BaseEstimator, RegressorMixin):
 
 def get_models(*, use_dl_models: bool = True, input_dim: int | None = None):
     """Return a dictionary of models to evaluate."""
-    models = {
-        "lightgbm": lgb.LGBMRegressor(verbose=-1),
-        "xgboost": xgb.XGBRegressor(verbosity=0),
-        "random_forest": RandomForestRegressor(),
-        "svr": SVR(),
-        "neural_net": SklearnMLPRegressor(max_iter=1000),
-    }
-    
-    if use_dl_models:
-        if TorchMLPRegressor is None:
-            raise ImportError("PyTorch is required for deep learning models")
-        if input_dim is None:
-            raise ValueError("input_dim must be provided when use_dl_models=True")
-        models.update(
-            {
-                "torch_mlp": TorchMLPRegressor(input_dim=input_dim),
-                "mlp": MLPRegressor(),
-                "lstm": LSTMRegressor(),
-                "gru": GRURegressor(),
-            }
-        )
+    if not use_dl_models:
+        return {
+            "lightgbm": lgb.LGBMRegressor(verbose=-1),
+            "xgboost": xgb.XGBRegressor(verbosity=0),
+            "random_forest": RandomForestRegressor(),
+            "svr": SVR(),
+            "neural_net": SklearnMLPRegressor(max_iter=1000),
+        }
+
+    if torch is None:
+        raise ImportError("PyTorch is required for deep learning models")
+    if input_dim is None:
+        raise ValueError("input_dim must be provided when use_dl_models=True")
+
+    models = {}
+    if TorchMLPRegressor is not None:
+        models["torch_mlp"] = TorchMLPRegressor(input_dim=input_dim)
+    models.update(
+        {
+            "mlp": MLPRegressor(),
+            "lstm": LSTMRegressor(),
+            "gru": GRURegressor(),
+        }
+    )
+
 
     return models

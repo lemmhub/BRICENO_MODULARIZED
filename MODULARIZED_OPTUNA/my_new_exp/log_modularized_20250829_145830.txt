@@ -1,0 +1,12 @@
+2025-08-29 14:58:30,661 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-08-29 14:58:30,662 - INFO - 📦 Original shape: (15000, 11)
+2025-08-29 14:58:30,662 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-08-29 14:58:30,662 - INFO - 🔁 Loading cached train-test split.
+2025-08-29 14:58:30,663 - INFO - ✅ After dropna: (14694, 11)
+2025-08-29 14:58:30,663 - INFO - 🚀 Starting optimization for: lightgbm
+2025-08-29 14:58:54,353 - INFO - 🔁 Trial 0: Best RMSE=0.044331, Best R2=0.9774, Best Params={'num_leaves': 160, 'learning_rate': 0.17617574178919118, 'n_estimators': 287, 'max_depth': 11, 'min_child_samples': 5, 'subsample': 0.7077735818768051, 'colsample_bytree': 0.9461334966305234}
+2025-08-29 14:58:59,619 - INFO - 🔁 Trial 1: Best RMSE=0.044331, Best R2=0.9774, Best Params={'num_leaves': 160, 'learning_rate': 0.17617574178919118, 'n_estimators': 287, 'max_depth': 11, 'min_child_samples': 5, 'subsample': 0.7077735818768051, 'colsample_bytree': 0.9461334966305234}
+2025-08-29 14:59:30,625 - INFO - 🔁 Trial 2: Best RMSE=0.039781, Best R2=0.9818, Best Params={'num_leaves': 294, 'learning_rate': 0.028294384263520687, 'n_estimators': 515, 'max_depth': 8, 'min_child_samples': 7, 'subsample': 0.5313860331748473, 'colsample_bytree': 0.9575672686274312}
+2025-08-29 14:59:46,142 - INFO - 🔁 Trial 3: Best RMSE=0.039781, Best R2=0.9818, Best Params={'num_leaves': 294, 'learning_rate': 0.028294384263520687, 'n_estimators': 515, 'max_depth': 8, 'min_child_samples': 7, 'subsample': 0.5313860331748473, 'colsample_bytree': 0.9575672686274312}
+2025-08-29 14:59:48,975 - INFO - 🔁 Trial 4: Best RMSE=0.039186, Best R2=0.9823, Best Params={'num_leaves': 246, 'learning_rate': 0.14396964839772494, 'n_estimators': 316, 'max_depth': 4, 'min_child_samples': 28, 'subsample': 0.5348223980419765, 'colsample_bytree': 0.5673418260826866}
+2025-08-29 15:00:17,034 - INFO - 🔁 Trial 5: Best RMSE=0.039186, Best R2=0.9823, Best Params={'num_leaves': 246, 'learning_rate': 0.14396964839772494, 'n_estimators': 316, 'max_depth': 4, 'min_child_samples': 28, 'subsample': 0.5348223980419765, 'colsample_bytree': 0.5673418260826866}
