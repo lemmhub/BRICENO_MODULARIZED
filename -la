@@ -1,0 +1,491 @@
+.:
+total 1940
+drwxrwxr-x  5 lmorenom lmorenom   4096 jul  9 19:49 .
+drwxr-x--- 13 lmorenom lmorenom   4096 jul 10 00:11 ..
+-rw-------  1 lmorenom lmorenom 678095 jun 17 05:48 DS_OCV_1.xlsx
+-rw-------  1 lmorenom lmorenom 618012 jun 17 05:48 DS_OCV_2.xlsx
+-rw-------  1 lmorenom lmorenom 618482 jun 17 05:48 DS_OCV_3.xlsx
+-rw-rw-r--  1 lmorenom lmorenom   1958 jun 17 14:43 evaluate.py
+drwxrwxr-x  8 lmorenom lmorenom   4096 jul 10 00:10 .git
+-rw-rw-r--  1 lmorenom lmorenom     12 jul  9 19:49 .gitignore
+-rw-rw-r--  1 lmorenom lmorenom   7344 jun 17 14:33 main.py
+-rw-rw-r--  1 lmorenom lmorenom    425 jun 17 13:45 models.py
+drwxrwxr-x  5 lmorenom lmorenom   4096 jun 17 14:46 MODULARIZED_OPTUNA
+-rw-rw-r--  1 lmorenom lmorenom   5882 jun 17 14:38 optimize.py
+-rw-rw-r--  1 lmorenom lmorenom   3186 jun 17 14:33 plots.py
+drwxrwxr-x  2 lmorenom lmorenom   4096 jun 17 14:46 __pycache__
+-rw-rw-r--  1 lmorenom lmorenom     47 jun 17 13:44 README.md
+-rw-rw-r--  1 lmorenom lmorenom    156 jun 17 05:50 requirements.txt
+-rw-rw-r--  1 lmorenom lmorenom   1906 jun 17 14:33 run_experiment.py
+-rw-rw-r--  1 lmorenom lmorenom    775 jun 17 13:46 utils.py
+
+./.git:
+total 52
+drwxrwxr-x  8 lmorenom lmorenom 4096 jul 10 00:10 .
+drwxrwxr-x  5 lmorenom lmorenom 4096 jul  9 19:49 ..
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 branches
+-rw-rw-r--  1 lmorenom lmorenom   15 jul 10 00:00 COMMIT_EDITMSG
+-rw-rw-r--  1 lmorenom lmorenom  262 jul  9 23:58 config
+-rw-rw-r--  1 lmorenom lmorenom   73 jul  9 19:49 description
+-rw-rw-r--  1 lmorenom lmorenom   23 jul  9 19:51 HEAD
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 hooks
+-rw-rw-r--  1 lmorenom lmorenom 2982 jul 10 00:00 index
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 info
+drwxrwxr-x  3 lmorenom lmorenom 4096 jul  9 19:49 logs
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 objects
+drwxrwxr-x  5 lmorenom lmorenom 4096 jul  9 23:58 refs
+
+./.git/branches:
+total 8
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 8 lmorenom lmorenom 4096 jul 10 00:10 ..
+
+./.git/hooks:
+total 68
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 8 lmorenom lmorenom 4096 jul 10 00:10 ..
+-rwxrwxr-x 1 lmorenom lmorenom  478 jul  9 19:49 applypatch-msg.sample
+-rwxrwxr-x 1 lmorenom lmorenom  896 jul  9 19:49 commit-msg.sample
+-rwxrwxr-x 1 lmorenom lmorenom 4655 jul  9 19:49 fsmonitor-watchman.sample
+-rwxrwxr-x 1 lmorenom lmorenom  189 jul  9 19:49 post-update.sample
+-rwxrwxr-x 1 lmorenom lmorenom  424 jul  9 19:49 pre-applypatch.sample
+-rwxrwxr-x 1 lmorenom lmorenom 1643 jul  9 19:49 pre-commit.sample
+-rwxrwxr-x 1 lmorenom lmorenom  416 jul  9 19:49 pre-merge-commit.sample
+-rwxrwxr-x 1 lmorenom lmorenom 1492 jul  9 19:49 prepare-commit-msg.sample
+-rwxrwxr-x 1 lmorenom lmorenom 1374 jul  9 19:49 pre-push.sample
+-rwxrwxr-x 1 lmorenom lmorenom 4898 jul  9 19:49 pre-rebase.sample
+-rwxrwxr-x 1 lmorenom lmorenom  544 jul  9 19:49 pre-receive.sample
+-rwxrwxr-x 1 lmorenom lmorenom 2783 jul  9 19:49 push-to-checkout.sample
+-rwxrwxr-x 1 lmorenom lmorenom 3650 jul  9 19:49 update.sample
+
+./.git/info:
+total 12
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 8 lmorenom lmorenom 4096 jul 10 00:10 ..
+-rw-rw-r-- 1 lmorenom lmorenom  240 jul  9 19:49 exclude
+
+./.git/logs:
+total 16
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 8 lmorenom lmorenom 4096 jul 10 00:10 ..
+-rw-rw-r-- 1 lmorenom lmorenom  984 jul  9 19:51 HEAD
+drwxrwxr-x 4 lmorenom lmorenom 4096 jul  9 23:58 refs
+
+./.git/logs/refs:
+total 16
+drwxrwxr-x 4 lmorenom lmorenom 4096 jul  9 23:58 .
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 19:49 ..
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:51 heads
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 23:58 remotes
+
+./.git/logs/refs/heads:
+total 12
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:51 .
+drwxrwxr-x 4 lmorenom lmorenom 4096 jul  9 23:58 ..
+-rw-rw-r-- 1 lmorenom lmorenom  588 jul  9 19:51 master
+
+./.git/logs/refs/remotes:
+total 12
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 23:58 .
+drwxrwxr-x 4 lmorenom lmorenom 4096 jul  9 23:58 ..
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 23:58 origin
+
+./.git/logs/refs/remotes/origin:
+total 12
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 23:58 .
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 23:58 ..
+-rw-rw-r-- 1 lmorenom lmorenom  158 jul  9 23:58 master
+
+./.git/objects:
+total 152
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x  8 lmorenom lmorenom 4096 jul 10 00:10 ..
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 07
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 0e
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 19
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 21
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 25
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 2c
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 33
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 36
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 38
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 42
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 65
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 6c
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 6f
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 7a
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 7c
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 7d
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 7e
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 82
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 87
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 8b
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 97
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 9e
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 a6
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 ad
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 b2
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 b4
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 b6
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 b8
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 d2
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 e1
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 eb
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 ed
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 f3
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 f8
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 info
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 pack
+
+./.git/objects/07:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  132 jul  9 19:49 305edbd391d51bd731d7deb337719d3e424aa9
+
+./.git/objects/0e:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 1857 jul  9 19:49 bf4809f3ed676bc68f5b200263d735d3c9ff33
+
+./.git/objects/19:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  906 jul  9 19:49 b04a7cb93b362b13b604e69ca2f3861e836144
+
+./.git/objects/21:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  149 jul  9 19:49 235d4b47c48cdd093a68292f29adb262fc17da
+
+./.git/objects/25:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  148 jul  9 19:49 0eb8163629e72c74eaef74ab768fcff9f8c86f
+
+./.git/objects/2c:
+total 604
+drwxrwxr-x  2 lmorenom lmorenom   4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom   4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 610025 jul  9 19:49 d3b44f0f3486d9f9ff122504c4b5a6d33cd000
+
+./.git/objects/33:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  146 jul  9 19:49 cb96bef1bb08fa3c61097dedd30aab6f7c1a3b
+
+./.git/objects/36:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  309 jul  9 19:49 98465c30f9673f451c3032600fecfa4bda1228
+
+./.git/objects/38:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 1299 jul  9 19:49 666c23e317f337c98298f5a90f7f3f4d2c1f4b
+
+./.git/objects/42:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  830 jul  9 19:49 6da507b5f7ea2b123f2c25e692d031ba65b34e
+
+./.git/objects/65:
+total 56
+drwxrwxr-x  2 lmorenom lmorenom  4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom  4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 48091 jul  9 19:49 3198e26c3dcbe4511bfcd2bdf9b734ca15b886
+
+./.git/objects/6c:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 2611 jul  9 19:49 a1744d3e32fe603aebd007675beb04fdcc062c
+
+./.git/objects/6f:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  149 jul  9 19:49 f556ea5cb7691edc4a3dc97654d50a566b03d9
+
+./.git/objects/7a:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  776 jul  9 19:49 6403726368cedeeedef30433bbbb7a00ad1b67
+
+./.git/objects/7c:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom   23 jul 10 00:00 5c0e71d030c2c957d6a45f4474d68e83001a55
+
+./.git/objects/7d:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  428 jul  9 19:49 7cb8b4b999f09fee1e4410743d42a8e18bbe9a
+
+./.git/objects/7e:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 3349 jul  9 19:49 dc40298ae763d53f1ec80c9ff6c7615babb16a
+
+./.git/objects/82:
+total 68
+drwxrwxr-x  2 lmorenom lmorenom  4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom  4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 60014 jul  9 19:49 d4801d7fdd0d3db1ba67f7b8fc75b48249bead
+
+./.git/objects/87:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 2658 jul  9 19:49 f590532956c9ea897554b30a97a22061e6ae2a
+
+./.git/objects/8b:
+total 16
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom   63 jul  9 19:49 71ad8c7c175deaaa258fbb303bfcf315db0f8d
+-r--r--r--  1 lmorenom lmorenom 1207 jul  9 19:49 abb0f3cd2ee3d0307265b9368b1ecae489717e
+
+./.git/objects/97:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom   73 jul  9 19:49 2a213af285cf88d36765b3e044e7566dbbd3c5
+
+./.git/objects/9e:
+total 608
+drwxrwxr-x  2 lmorenom lmorenom   4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom   4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 610375 jul  9 19:49 8df91ffdf9cebb6faa9a8e0b95bfde0ba8c3c1
+
+./.git/objects/a6:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  133 jul  9 19:49 ca1d5fee0597ae3050f2b92dc4860c7eab5b0d
+
+./.git/objects/ad:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 1911 jul  9 19:49 a45b1edeac754fbc819001a4864d425fe5865a
+
+./.git/objects/b2:
+total 668
+drwxrwxr-x  2 lmorenom lmorenom   4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom   4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 673808 jul  9 19:49 72b84b9f3e8402bd945fb330374d0968b73c86
+
+./.git/objects/b4:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  221 jul  9 19:49 6f22bb8d9914a90af0c52c928767f378677228
+
+./.git/objects/b6:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  131 jul  9 19:49 7ca08a6366bc1d667db05ba1e4e7e1de28faeb
+
+./.git/objects/b8:
+total 32
+drwxrwxr-x  2 lmorenom lmorenom  4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom  4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 24182 jul  9 19:49 e62d1c647c5e3c8993684a375f7c7750afaa3a
+
+./.git/objects/d2:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  406 jul  9 19:49 4e94a62311e1abe3e59613b255a45ab4316ed9
+
+./.git/objects/e1:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  120 jul  9 19:49 1af7cf97d0dc76302e9af673d105a8dce5011d
+
+./.git/objects/eb:
+total 16
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  238 jul  9 19:49 13bbd6885b3179e70686669e326877882c4898
+-r--r--r--  1 lmorenom lmorenom  519 jul 10 00:00 6c49629eb863c5ef9b32287a5dbc2bf4091322
+
+./.git/objects/ed:
+total 12
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom  888 jul  9 19:49 cc5dd1ecacdffb1e701373a2d50f8c39a030c2
+
+./.git/objects/f3:
+total 36
+drwxrwxr-x  2 lmorenom lmorenom  4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom  4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 25400 jul  9 19:49 c53f8dd3cab1732c925d8360b6a1e63533634b
+
+./.git/objects/f8:
+total 56
+drwxrwxr-x  2 lmorenom lmorenom  4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom  4096 jul  9 19:49 ..
+-r--r--r--  1 lmorenom lmorenom 47450 jul  9 19:49 d948f1d9bd01c8acabfdb6353df15ffb5fb837
+
+./.git/objects/info:
+total 8
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+
+./.git/objects/pack:
+total 8
+drwxrwxr-x  2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 38 lmorenom lmorenom 4096 jul  9 19:49 ..
+
+./.git/refs:
+total 20
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 23:58 .
+drwxrwxr-x 8 lmorenom lmorenom 4096 jul 10 00:10 ..
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:51 heads
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 23:58 remotes
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:49 tags
+
+./.git/refs/heads:
+total 12
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:51 .
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 23:58 ..
+-rw-rw-r-- 1 lmorenom lmorenom   41 jul  9 19:51 master
+
+./.git/refs/remotes:
+total 12
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 23:58 .
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 23:58 ..
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 23:58 origin
+
+./.git/refs/remotes/origin:
+total 12
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 23:58 .
+drwxrwxr-x 3 lmorenom lmorenom 4096 jul  9 23:58 ..
+-rw-rw-r-- 1 lmorenom lmorenom   41 jul  9 23:58 master
+
+./.git/refs/tags:
+total 8
+drwxrwxr-x 2 lmorenom lmorenom 4096 jul  9 19:49 .
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 23:58 ..
+
+./MODULARIZED_OPTUNA:
+total 20
+drwxrwxr-x 5 lmorenom lmorenom 4096 jun 17 14:46 .
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 19:49 ..
+drwxrwxr-x 7 lmorenom lmorenom 4096 jun 19 00:06 optuna_studies
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 19 00:06 test1
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 19:43 test2
+
+./MODULARIZED_OPTUNA/optuna_studies:
+total 28
+drwxrwxr-x 7 lmorenom lmorenom 4096 jun 19 00:06 .
+drwxrwxr-x 5 lmorenom lmorenom 4096 jun 17 14:46 ..
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 17 08:10 lightgbm
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 19 00:06 neural_net
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 17 12:58 random_forest
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 18 02:46 svr
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 17 08:16 xgboost
+
+./MODULARIZED_OPTUNA/optuna_studies/lightgbm:
+total 128
+drwxrwxr-x 2 lmorenom lmorenom   4096 jun 17 08:10 .
+drwxrwxr-x 7 lmorenom lmorenom   4096 jun 19 00:06 ..
+-rw-rw-r-- 1 lmorenom lmorenom 119672 jun 17 08:10 study.pkl
+
+./MODULARIZED_OPTUNA/optuna_studies/neural_net:
+total 120
+drwxrwxr-x 2 lmorenom lmorenom   4096 jun 19 00:06 .
+drwxrwxr-x 7 lmorenom lmorenom   4096 jun 19 00:06 ..
+-rw-rw-r-- 1 lmorenom lmorenom 111730 jun 19 00:06 study.pkl
+
+./MODULARIZED_OPTUNA/optuna_studies/random_forest:
+total 92
+drwxrwxr-x 2 lmorenom lmorenom  4096 jun 17 12:58 .
+drwxrwxr-x 7 lmorenom lmorenom  4096 jun 19 00:06 ..
+-rw-rw-r-- 1 lmorenom lmorenom 84868 jun 17 12:58 study.pkl
+
+./MODULARIZED_OPTUNA/optuna_studies/svr:
+total 92
+drwxrwxr-x 2 lmorenom lmorenom  4096 jun 18 02:46 .
+drwxrwxr-x 7 lmorenom lmorenom  4096 jun 19 00:06 ..
+-rw-rw-r-- 1 lmorenom lmorenom 82269 jun 18 02:46 study.pkl
+
+./MODULARIZED_OPTUNA/optuna_studies/xgboost:
+total 160
+drwxrwxr-x 2 lmorenom lmorenom   4096 jun 17 08:16 .
+drwxrwxr-x 7 lmorenom lmorenom   4096 jun 19 00:06 ..
+-rw-rw-r-- 1 lmorenom lmorenom 152257 jun 17 08:16 study.pkl
+
+./MODULARIZED_OPTUNA/test1:
+total 1700
+drwxrwxr-x 2 lmorenom lmorenom    4096 jun 19 00:06 .
+drwxrwxr-x 5 lmorenom lmorenom    4096 jun 17 14:46 ..
+-rw-rw-r-- 1 lmorenom lmorenom    4787 jun 19 00:06 log_modularized_20250617_071556.txt
+-rw-rw-r-- 1 lmorenom lmorenom   72872 jun 19 00:06 radar_chart.png
+-rw-rw-r-- 1 lmorenom lmorenom 1647237 jun 17 07:15 split_data.pkl
+
+./MODULARIZED_OPTUNA/test2:
+total 1940
+drwxrwxr-x 5 lmorenom lmorenom    4096 jul  9 19:43 .
+drwxrwxr-x 5 lmorenom lmorenom    4096 jun 17 14:46 ..
+-rw-rw-r-- 1 lmorenom lmorenom  309624 jul  9 19:43 checkpoint.pkl
+drwxrwxr-x 2 lmorenom lmorenom    4096 jun 17 15:32 lightgbm
+-rw-rw-r-- 1 lmorenom lmorenom     709 jul  9 19:43 log_modularized_20250617_144626.txt
+drwxrwxr-x 2 lmorenom lmorenom    4096 jul  9 19:43 random_forest
+-rw-rw-r-- 1 lmorenom lmorenom 1647237 jun 17 14:46 split_data.pkl
+drwxrwxr-x 2 lmorenom lmorenom    4096 jun 19 00:15 xgboost
+
+./MODULARIZED_OPTUNA/test2/lightgbm:
+total 2380
+drwxrwxr-x 2 lmorenom lmorenom    4096 jun 17 15:32 .
+drwxrwxr-x 5 lmorenom lmorenom    4096 jul  9 19:43 ..
+-rw-rw-r-- 1 lmorenom lmorenom   50157 jun 17 15:32 actual_vs_pred_lightgbm.png
+-rw-rw-r-- 1 lmorenom lmorenom 2199579 jun 17 15:32 best_model.pkl
+-rw-rw-r-- 1 lmorenom lmorenom     156 jun 17 15:32 individual_result_lightgbm.csv
+-rw-rw-r-- 1 lmorenom lmorenom     244 jun 17 15:32 individual_result_lightgbm.pkl
+-rw-rw-r-- 1 lmorenom lmorenom  132190 jun 17 15:32 lightgbm_study.pkl
+-rw-rw-r-- 1 lmorenom lmorenom   26235 jun 17 15:32 residuals_lightgbm.png
+
+./MODULARIZED_OPTUNA/test2/random_forest:
+total 838300
+drwxrwxr-x 2 lmorenom lmorenom      4096 jul  9 19:43 .
+drwxrwxr-x 5 lmorenom lmorenom      4096 jul  9 19:43 ..
+-rw-rw-r-- 1 lmorenom lmorenom 858405670 jun 20 04:41 best_model.pkl
+
+./MODULARIZED_OPTUNA/test2/xgboost:
+total 1144
+drwxrwxr-x 2 lmorenom lmorenom   4096 jun 19 00:15 .
+drwxrwxr-x 5 lmorenom lmorenom   4096 jul  9 19:43 ..
+-rw-rw-r-- 1 lmorenom lmorenom  50854 jun 19 00:15 actual_vs_pred_xgboost.png
+-rw-rw-r-- 1 lmorenom lmorenom 901478 jun 19 00:15 best_model.pkl
+-rw-rw-r-- 1 lmorenom lmorenom    157 jun 19 00:15 individual_result_xgboost.csv
+-rw-rw-r-- 1 lmorenom lmorenom    244 jun 19 00:15 individual_result_xgboost.pkl
+-rw-rw-r-- 1 lmorenom lmorenom  27714 jun 19 00:15 residuals_xgboost.png
+-rw-rw-r-- 1 lmorenom lmorenom 164229 jun 19 00:15 xgboost_study.pkl
+
+./__pycache__:
+total 40
+drwxrwxr-x 2 lmorenom lmorenom 4096 jun 17 14:46 .
+drwxrwxr-x 5 lmorenom lmorenom 4096 jul  9 19:49 ..
+-rw-rw-r-- 1 lmorenom lmorenom 1891 jun 17 14:46 evaluate.cpython-310.pyc
+-rw-rw-r-- 1 lmorenom lmorenom 5651 jun 17 14:46 main.cpython-310.pyc
+-rw-rw-r-- 1 lmorenom lmorenom  603 jun 17 14:46 models.cpython-310.pyc
+-rw-rw-r-- 1 lmorenom lmorenom 4358 jun 17 14:46 optimize.cpython-310.pyc
+-rw-rw-r-- 1 lmorenom lmorenom 2892 jun 17 14:46 plots.cpython-310.pyc
+-rw-rw-r-- 1 lmorenom lmorenom 1188 jun 17 14:46 utils.cpython-310.pyc

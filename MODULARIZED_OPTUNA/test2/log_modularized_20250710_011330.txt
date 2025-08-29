@@ -1,0 +1,35 @@
+2025-07-10 01:13:30,566 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-07-10 01:13:30,566 - INFO - 📦 Original shape: (15000, 11)
+2025-07-10 01:13:30,566 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-07-10 01:13:30,567 - INFO - 🔁 Loading cached train-test split.
+2025-07-10 01:13:30,568 - INFO - ✅ After dropna: (14694, 11)
+2025-07-10 01:13:30,571 - INFO - ✅ Skipping lightgbm, already completed.
+2025-07-10 01:13:30,571 - INFO - ✅ Skipping xgboost, already completed.
+2025-07-10 01:13:30,571 - INFO - 🚀 Starting optimization for: random_forest
+2025-07-11 05:41:52,302 - INFO - ✅ Finished evaluation for: random_forest
+2025-07-11 05:41:52,303 - INFO - 🚀 Starting optimization for: svr
+2025-07-11 15:15:06,226 - INFO - ✅ Finished evaluation for: svr
+2025-07-11 15:15:06,227 - INFO - 🚀 Starting optimization for: neural_net
+2025-07-11 19:17:46,650 - INFO - ✅ Finished evaluation for: neural_net
+2025-07-11 19:17:46,651 - INFO - 📈 Generating final analysis and plots
+2025-07-11 19:17:46,790 - INFO - 📋 EXECUTIVE SUMMARY:
+2025-07-11 19:17:46,790 - INFO - ----------------------------------------
+2025-07-11 19:17:46,790 - INFO - 🏆 Champion Model: lightgbm
+2025-07-11 19:17:46,790 - INFO -    • R² Score: 98.46%
+2025-07-11 19:17:46,790 - INFO -    • RMSE: 0.036321
+2025-07-11 19:17:46,790 - INFO -    • MAE: 0.028535
+2025-07-11 19:17:46,790 - INFO -    • Inference Time: 5.4296 ± 0.0185 ms
+2025-07-11 19:17:46,790 - INFO - 
+📊 KEY INSIGHTS:
+2025-07-11 19:17:46,790 - INFO - ----------------------------------------
+2025-07-11 19:17:46,790 - INFO - • Total models evaluated: 5
+2025-07-11 19:17:46,790 - INFO - • Hyperparameter trials per model: 200
+2025-07-11 19:17:46,790 - INFO - • Cross-validation folds: 10
+2025-07-11 19:17:46,790 - INFO - • Test set size: 2939 samples (20.0% of total data)
+2025-07-11 19:17:46,790 - INFO - • Fastest model: xgboost (0.9397 ms)
+2025-07-11 19:17:46,790 - INFO - • Most accurate model: lightgbm (RMSE: 0.036321)
+2025-07-11 19:17:46,790 - INFO - 
+💡 RECOMMENDATIONS:
+2025-07-11 19:17:46,790 - INFO - ----------------------------------------
+2025-07-11 19:17:46,790 - INFO - ✅ The lightgbm model shows the best overall performance
+2025-07-11 19:17:46,790 - INFO -    → Recommended for production deployment
