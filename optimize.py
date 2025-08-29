@@ -8,7 +8,6 @@ import pickle
 import os
 from pathlib import Path
 
-
 def suggest_mlp(trial):
     """Suggest hyperparameters for a basic MLP model.
 
@@ -55,10 +54,24 @@ def suggest_gru(trial):
         "loss": trial.suggest_categorical("gru_loss", ["mse", "mae"]),
     }
 
-
-def run_optimization(model_name, save_dir, X, y, n_trials, cv, use_DL_models=False):
-
+  
+def run_optimization(model_name, save_dir, X, y, n_trials, cv, logger, use_DL_models=False):
     """Run hyperparameter optimization for a given model.
+
+    Parameters
+    ----------
+    model_name : str
+        Identifier of the model to optimize.
+    save_dir : Path or str
+        Directory to save optimization artifacts.
+    X, y : array-like
+        Training data and targets.
+    n_trials : int
+        Number of Optuna trials.
+    cv : int
+        Number of cross-validation folds.
+    logger : logging.Logger
+        Logger for recording progress messages.
 
     Returns
     -------
@@ -81,9 +94,11 @@ def run_optimization(model_name, save_dir, X, y, n_trials, cv, use_DL_models=Fal
         best_r2 = max((t.user_attrs.get("r2_mean", float("-inf")) for t in study.trials), default=float("nan"))
         study.set_user_attr("best_r2", best_r2)
         pbar.update(1)
-        tqdm.write(
+        message = (
             f"🔁 Trial {trial_number}: Best RMSE={best_value:.6f}, Best R2={best_r2:.4f}, Best Params={best_params}"
         )
+        tqdm.write(message)
+        logger.info(message)
 
     def objective(trial):
         model_dict = get_models()
