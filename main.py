@@ -19,7 +19,7 @@ from plots import generate_all_plots, generate_individual_plots
 from utils import create_experiment_dirs, setup_logging, save_checkpoint, load_checkpoint
 
 
-use_DL_models: bool = True
+USE_DL_MODELS: bool = True
 
 def run_optuna_pipeline(
     data,
@@ -30,7 +30,7 @@ def run_optuna_pipeline(
     test_size=0.2,
     seed=23,
     inference_runs=100,
-    use_dl_models: bool = use_DL_models,
+    use_dl_models: bool = USE_DL_MODELS,
 ):
     # ==== CONFIGURATION ====
     experiment_name = experiment_name or f"experiment_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
@@ -126,7 +126,7 @@ def run_optuna_pipeline(
                     n_trials,
                     cv_folds,
                     logger,
-                    use_dl_models=True,
+                    use_dl_models=use_dl_models,
                 )
                 best_params = study.best_params
                 logger.info(f"🔧 Best parameters for {model_name}: {best_params}")
@@ -141,6 +141,7 @@ def run_optuna_pipeline(
                     n_inference_runs=eval_runs,
                     save_dir=save_dir / model_name,
                     model_name=model_name,
+                    use_dl_models=use_dl_models,
                 )
                 logger.info(f"📊 {model_name} evaluation metrics:")
                 logger.info(f"   • R²: {eval_results['R2']:.4f}")
