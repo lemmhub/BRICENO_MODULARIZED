@@ -2,7 +2,7 @@ import argparse
 from tqdm import tqdm
 from main import run_optuna_pipeline
 
-def run_main_pipeline(experiment_name=None, trials=200, cv=10, test_size=0.2, inference_runs=100):
+def run_main_pipeline(experiment_name=None, trials=200, cv=10, test_size=0.2, inference_runs=100, use_dl_models=False):
     import pandas as pd
 
     files = ["DS_OCV_1.xlsx", "DS_OCV_2.xlsx", "DS_OCV_3.xlsx"]
@@ -22,6 +22,7 @@ def run_main_pipeline(experiment_name=None, trials=200, cv=10, test_size=0.2, in
             cv_folds=cv,
             test_size=test_size,
             inference_runs=inference_runs,
+            use_dl_models=use_dl_models,
         )
         pbar.update(1)
 
@@ -32,6 +33,7 @@ if __name__ == "__main__":
     parser.add_argument("--cv", type=int, default=10, help="Number of cross-validation folds")
     parser.add_argument("--test_size", type=float, default=0.2, help="Test set split ratio")
     parser.add_argument("--inference_runs", type=int, default=100, help="Number of repetitions for inference timing")
+    parser.add_argument("--use_dl_models", action="store_true", help="Use deep learning models (mlp, lstm, gru)")
     args = parser.parse_args()
 
     run_main_pipeline(
@@ -39,5 +41,6 @@ if __name__ == "__main__":
         trials=args.trials,
         cv=args.cv,
         test_size=args.test_size,
-        inference_runs=args.inference_runs
+        inference_runs=args.inference_runs,
+        use_dl_models=args.use_dl_models,
     )
