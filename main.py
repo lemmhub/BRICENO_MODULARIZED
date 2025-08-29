@@ -114,6 +114,7 @@ def run_optuna_pipeline(
                     y_trainval,
                     n_trials,
                     cv_folds,
+                    logger,
                 )
 
 
