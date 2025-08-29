@@ -34,12 +34,21 @@ def generate_individual_plots(model, X_test, y_test, save_dir, model_name):
     plt.close()
 
 
-def generate_all_plots(results, save_dir, y_true):
+def generate_all_plots(results, save_dir, X_test, y_true):
     """Generate comparison plots across all models."""
     save_dir = Path(save_dir) / "comparison"
     save_dir.mkdir(parents=True, exist_ok=True)
 
     df = pd.DataFrame(results)
+
+    # Bar chart of R² scores
+    ax = df.plot.bar(x="Model", y="R2")
+    ax.set_ylabel("R2")
+    ax.set_title("R2 Score by Model")
+    fig = ax.get_figure()
+    fig.tight_layout()
+    fig.savefig(save_dir / "r2_bar.png")
+    plt.close(fig)
 
     # Radar chart
     radar_labels = ["R2", "RMSE", "MAE", "Inference_Time_Mean_ms"]
@@ -70,10 +79,10 @@ def generate_all_plots(results, save_dir, y_true):
 
     # Actual vs Predicted for each model
     for entry in results:
-        model = entry['Study'].user_attrs.get("final_model")
+        model = entry["Study"].user_attrs.get("final_model")
         if model is None:
             continue
-        y_pred = model.predict(y_true.index.to_frame())
+        y_pred = model.predict(X_test)
         plt.figure()
         plt.scatter(y_true, y_pred, alpha=0.3)
         plt.plot([y_true.min(), y_true.max()], [y_true.min(), y_true.max()], '--k')
