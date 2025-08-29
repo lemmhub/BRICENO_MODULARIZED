@@ -128,6 +128,15 @@ def run_optuna_pipeline(
                     save_dir=save_dir / model_name,
                     model_name=model_name,
                 )
+                logger.info(f"📊 {model_name} evaluation metrics:")
+                logger.info(f"   • R²: {eval_results['R2']:.4f}")
+                logger.info(f"   • RMSE: {eval_results['RMSE']:.6f}")
+                logger.info(f"   • MAE: {eval_results['MAE']:.6f}")
+                logger.info(
+                    "   • Inference Time: "
+                    f"{eval_results['Inference_Time_Mean_ms']:.4f} ± "
+                    f"{eval_results['Inference_Time_Std_ms']:.4f} ms"
+                )
                 generate_individual_plots(
                     best_model,
                     X_test,
