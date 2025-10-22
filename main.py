@@ -6,6 +6,7 @@ import pickle
 import logging
 from datetime import datetime
 from pathlib import Path
+import json
 from tqdm import tqdm
 
 import numpy as np
@@ -13,7 +14,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from models import get_models
-from optimize import run_optimization
+from optimize import run_optimization, sanity_check_models
 from evaluate import evaluate_model
 from plots import generate_all_plots, generate_individual_plots
 from utils import create_experiment_dirs, setup_logging, save_checkpoint, load_checkpoint
@@ -87,6 +88,22 @@ def run_optuna_pipeline(
             pickle.dump((X_trainval, X_test, y_trainval, y_test), f)
     logger.info(f"✅ After dropna: {data.shape}")
 
+    # === Sanity checks ====
+    logger.info("🩺 Running pre-optimization sanity checks")
+    sanity_results = sanity_check_models(
+        models_to_evaluate,
+        X_trainval,
+        y_trainval,
+        cv_folds,
+        logger,
+        use_dl_models=use_dl_models,
+    )
+    sanity_path = save_dir / "precheck_results.json"
+    with open(sanity_path, "w") as f:
+        json.dump(sanity_results, f, indent=2)
+    logger.info(f"📝 Sanity check summary saved to {sanity_path}")
+
+
     # ==== LOAD CHECKPOINT (if any) ====
     checkpoint = load_checkpoint(checkpoint_path)
     completed_models = checkpoint.get("completed_models", [])
@@ -128,7 +145,14 @@ def run_optuna_pipeline(
                     logger,
                     use_dl_models=use_dl_models,
                 )
-                best_params = study.best_params
+                #best_params = study.best_params
+                #sanity checks
+                best_params = study.user_attrs.get(
+                    "best_estimator_params",
+                    study.best_params,
+                )
+
+
                 logger.info(f"🔧 Best parameters for {model_name}: {best_params}")
 
                 step_bar.update(1)

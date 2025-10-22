@@ -1,5 +1,5 @@
 import optuna
-from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import cross_val_score, cross_validate
 from models import get_models
 from tqdm import tqdm
 import pickle
@@ -8,11 +8,12 @@ from pathlib import Path
 
 def suggest_mlp(trial):
     """Suggest hyperparameters for a basic MLP model."""
+    n_layers = trial.suggest_int("mlp_n_layers", 1, 3)
+    hidden_size = trial.suggest_int("mlp_hidden_size", 16, 256)
+
     return {
-        "n_layers": trial.suggest_int("mlp_n_layers", 1, 3),
-        "hidden_size": trial.suggest_int("mlp_hidden_size", 16, 256),
-        "dropout": trial.suggest_float("mlp_dropout", 0.0, 0.5),
-        "learning_rate": trial.suggest_float("mlp_learning_rate", 1e-5, 1e-1, log=True),
+        "hidden_sizes": tuple(hidden_size for _ in range(n_layers)),
+        "lr": trial.suggest_float("mlp_learning_rate", 1e-5, 1e-1, log=True),
         "batch_size": trial.suggest_categorical("mlp_batch_size", [32, 64, 128]),
         "epochs": trial.suggest_int("mlp_epochs", 10, 200),
         "loss": trial.suggest_categorical("mlp_loss", ["mse", "mae"]),
@@ -32,10 +33,9 @@ def suggest_torch_mlp(trial):
 def suggest_lstm(trial):
     """Suggest hyperparameters for an LSTM model."""
     return {
-        "n_layers": trial.suggest_int("lstm_n_layers", 1, 3),
+        "num_layers": trial.suggest_int("lstm_n_layers", 1, 3),
         "hidden_size": trial.suggest_int("lstm_hidden_size", 16, 256),
-        "dropout": trial.suggest_float("lstm_dropout", 0.0, 0.5),
-        "learning_rate": trial.suggest_float("lstm_learning_rate", 1e-5, 1e-1, log=True),
+        "lr": trial.suggest_float("lstm_learning_rate", 1e-5, 1e-1, log=True),
         "batch_size": trial.suggest_categorical("lstm_batch_size", [32, 64, 128]),
         "epochs": trial.suggest_int("lstm_epochs", 10, 200),
         "loss": trial.suggest_categorical("lstm_loss", ["mse", "mae"]),
@@ -47,12 +47,62 @@ def suggest_gru(trial):
     return {
         "num_layers": trial.suggest_int("gru_n_layers", 1, 3),
         "hidden_size": trial.suggest_int("gru_hidden_size", 16, 256),
-        "dropout": trial.suggest_float("gru_dropout", 0.0, 0.5),
-        "learning_rate": trial.suggest_float("gru_learning_rate", 1e-5, 1e-1, log=True),
+        "lr": trial.suggest_float("gru_learning_rate", 1e-5, 1e-1, log=True),
         "batch_size": trial.suggest_categorical("gru_batch_size", [32, 64, 128]),
         "epochs": trial.suggest_int("gru_epochs", 10, 200),
         "loss": trial.suggest_categorical("gru_loss", ["mse", "mae"]),
     }
+
+def record_trial_params(trial, params):
+    """Store the estimator-ready params on the trial for later retrieval."""
+    trial.set_user_attr("estimator_params", params)
+
+
+def translate_best_params(study):
+    """Return estimator-compatible parameters for the study's best trial."""
+    trial = study.best_trial
+    params = trial.user_attrs.get("estimator_params")
+    if params is not None:
+        return params
+
+    # Fallback: use raw params when no translation was stored.
+    return trial.params
+
+
+def sanity_check_models(model_names, X, y, cv, logger, use_dl_models=True):
+    """Run a quick cross-validation pass to ensure models train successfully."""
+    models = get_models(
+        use_dl_models=use_dl_models,
+        input_dim=X.shape[1] if use_dl_models else None,
+    )
+
+    results = {}
+    scoring = {
+        "r2": "r2",
+        "rmse": "neg_root_mean_squared_error",
+    }
+
+    for name in model_names:
+        model = models[name]
+        try:
+            scores = cross_validate(model, X, y, scoring=scoring, cv=cv, n_jobs=None)
+            r2_mean = scores["test_r2"].mean()
+            rmse_mean = -scores["test_rmse"].mean()
+            results[name] = {
+                "r2_mean": float(r2_mean),
+                "rmse_mean": float(rmse_mean),
+            }
+            logger.info(
+                "🩺 Sanity check %s passed — R2=%.4f, RMSE=%.6f",
+                name,
+                r2_mean,
+                rmse_mean,
+            )
+        except Exception as exc:  # pragma: no cover - diagnostics only
+            logger.exception("❌ Sanity check failed for %s", name)
+            results[name] = {"error": str(exc)}
+
+    return results
 
 
 def run_optimization(
@@ -176,6 +226,8 @@ def run_optimization(
         else:
             raise ValueError("Unsupported model")
 
+        record_trial_params(trial, params)
+
         model = model_dict[model_name].set_params(**params)
 
         r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
@@ -196,12 +248,16 @@ def run_optimization(
     study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
     pbar.close()
 
+    best_params = translate_best_params(study)
     best_model = get_models(
         use_dl_models=use_dl_models, input_dim=X.shape[1] if use_dl_models else None
-    )[model_name].set_params(**study.best_params)
+    )[model_name].set_params(**best_params)
+
 
     best_model.fit(X, y)
     study.user_attrs["final_model"] = best_model
+
+    study.set_user_attr("best_estimator_params", best_params)
 
     cv_r2 = cross_val_score(best_model, X, y, scoring="r2", cv=cv).mean()
     cv_rmse = -cross_val_score(best_model, X, y, scoring="neg_root_mean_squared_error", cv=cv).mean()
