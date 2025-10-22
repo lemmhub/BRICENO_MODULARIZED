@@ -1,0 +1,6 @@
+2025-09-19 21:30:29,219 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-09-19 21:30:29,219 - INFO - 📦 Original shape: (15000, 11)
+2025-09-19 21:30:29,219 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-09-19 21:30:29,220 - INFO - 📐 Performing train-test split.
+2025-09-19 21:30:29,224 - INFO - ✅ After dropna: (14694, 11)
+2025-09-19 21:30:29,224 - INFO - 🚀 Starting optimization for: torch_mlp

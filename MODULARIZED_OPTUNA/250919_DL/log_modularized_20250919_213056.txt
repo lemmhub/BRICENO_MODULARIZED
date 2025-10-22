@@ -1,0 +1,282 @@
+2025-09-19 21:30:56,804 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-09-19 21:30:56,804 - INFO - 📦 Original shape: (15000, 11)
+2025-09-19 21:30:56,804 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-09-19 21:30:56,805 - INFO - 🔁 Loading cached train-test split.
+2025-09-19 21:30:56,805 - INFO - ✅ After dropna: (14694, 11)
+2025-09-19 21:30:56,806 - INFO - 🚀 Starting optimization for: torch_mlp
+2025-09-19 21:33:25,354 - INFO - 🔁 Trial 0: Best RMSE=inf, Best R2=-0.4379, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 21:34:36,432 - INFO - 🔁 Trial 1: Best RMSE=inf, Best R2=0.4560, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 21:47:07,326 - INFO - 🔁 Trial 2: Best RMSE=inf, Best R2=0.4560, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 21:50:52,818 - INFO - 🔁 Trial 3: Best RMSE=inf, Best R2=0.5955, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:02:17,921 - INFO - 🔁 Trial 4: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:06:30,201 - INFO - 🔁 Trial 5: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:09:00,478 - INFO - 🔁 Trial 6: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:16:30,026 - INFO - 🔁 Trial 7: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:20:11,819 - INFO - 🔁 Trial 8: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:22:15,160 - INFO - 🔁 Trial 9: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:27:15,389 - INFO - 🔁 Trial 10: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:28:21,583 - INFO - 🔁 Trial 11: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:30:57,924 - INFO - 🔁 Trial 12: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:32:45,323 - INFO - 🔁 Trial 13: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:35:51,416 - INFO - 🔁 Trial 14: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:36:15,061 - INFO - 🔁 Trial 15: Best RMSE=inf, Best R2=0.7774, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:39:06,441 - INFO - 🔁 Trial 16: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:40:14,869 - INFO - 🔁 Trial 17: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:40:26,877 - INFO - 🔁 Trial 18: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:44:51,592 - INFO - 🔁 Trial 19: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:47:12,134 - INFO - 🔁 Trial 20: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 22:58:18,766 - INFO - 🔁 Trial 21: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:11:35,370 - INFO - 🔁 Trial 22: Best RMSE=inf, Best R2=0.7910, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:20:48,238 - INFO - 🔁 Trial 23: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:27:32,707 - INFO - 🔁 Trial 24: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:32:23,250 - INFO - 🔁 Trial 25: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:33:18,583 - INFO - 🔁 Trial 26: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:36:51,465 - INFO - 🔁 Trial 27: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:41:45,171 - INFO - 🔁 Trial 28: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:48:47,507 - INFO - 🔁 Trial 29: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:50:40,607 - INFO - 🔁 Trial 30: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:54:34,961 - INFO - 🔁 Trial 31: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-19 23:58:11,719 - INFO - 🔁 Trial 32: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:01:29,817 - INFO - 🔁 Trial 33: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:05:18,606 - INFO - 🔁 Trial 34: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:15:05,755 - INFO - 🔁 Trial 35: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:18:54,018 - INFO - 🔁 Trial 36: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:21:47,510 - INFO - 🔁 Trial 37: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:31:47,516 - INFO - 🔁 Trial 38: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:33:07,360 - INFO - 🔁 Trial 39: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:34:05,833 - INFO - 🔁 Trial 40: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:43:07,805 - INFO - 🔁 Trial 41: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 00:54:22,119 - INFO - 🔁 Trial 42: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:04:24,820 - INFO - 🔁 Trial 43: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:11:34,222 - INFO - 🔁 Trial 44: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:13:47,086 - INFO - 🔁 Trial 45: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:16:32,187 - INFO - 🔁 Trial 46: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:27:30,445 - INFO - 🔁 Trial 47: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:31:43,473 - INFO - 🔁 Trial 48: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:34:51,605 - INFO - 🔁 Trial 49: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:38:30,460 - INFO - 🔁 Trial 50: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:42:27,795 - INFO - 🔁 Trial 51: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:45:42,981 - INFO - 🔁 Trial 52: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:49:20,448 - INFO - 🔁 Trial 53: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:55:05,895 - INFO - 🔁 Trial 54: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 01:59:01,671 - INFO - 🔁 Trial 55: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:03:57,586 - INFO - 🔁 Trial 56: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:05:30,155 - INFO - 🔁 Trial 57: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:15:30,266 - INFO - 🔁 Trial 58: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:16:31,675 - INFO - 🔁 Trial 59: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:27:09,549 - INFO - 🔁 Trial 60: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:29:21,173 - INFO - 🔁 Trial 61: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:31:14,282 - INFO - 🔁 Trial 62: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:33:50,668 - INFO - 🔁 Trial 63: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:35:14,516 - INFO - 🔁 Trial 64: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:37:02,419 - INFO - 🔁 Trial 65: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:40:59,540 - INFO - 🔁 Trial 66: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:44:22,722 - INFO - 🔁 Trial 67: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:46:33,727 - INFO - 🔁 Trial 68: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:49:45,485 - INFO - 🔁 Trial 69: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 02:53:11,988 - INFO - 🔁 Trial 70: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:00:06,405 - INFO - 🔁 Trial 71: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:04:53,086 - INFO - 🔁 Trial 72: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:05:49,875 - INFO - 🔁 Trial 73: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:10:41,491 - INFO - 🔁 Trial 74: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:18:10,370 - INFO - 🔁 Trial 75: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:20:59,612 - INFO - 🔁 Trial 76: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:28:25,125 - INFO - 🔁 Trial 77: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:31:08,295 - INFO - 🔁 Trial 78: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:37:02,111 - INFO - 🔁 Trial 79: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:40:48,022 - INFO - 🔁 Trial 80: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:44:38,421 - INFO - 🔁 Trial 81: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:48:17,534 - INFO - 🔁 Trial 82: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:52:19,228 - INFO - 🔁 Trial 83: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:55:19,734 - INFO - 🔁 Trial 84: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 03:59:01,705 - INFO - 🔁 Trial 85: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:02:58,218 - INFO - 🔁 Trial 86: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:13:18,410 - INFO - 🔁 Trial 87: Best RMSE=inf, Best R2=0.8102, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:16:24,682 - INFO - 🔁 Trial 88: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:19:44,501 - INFO - 🔁 Trial 89: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:25:20,595 - INFO - 🔁 Trial 90: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:26:02,175 - INFO - 🔁 Trial 91: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:28:01,088 - INFO - 🔁 Trial 92: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:31:29,376 - INFO - 🔁 Trial 93: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:38:01,360 - INFO - 🔁 Trial 94: Best RMSE=inf, Best R2=0.8213, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:39:47,342 - INFO - 🔁 Trial 95: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:41:27,502 - INFO - 🔁 Trial 96: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:41:56,362 - INFO - 🔁 Trial 97: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:44:17,919 - INFO - 🔁 Trial 98: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:48:06,914 - INFO - 🔁 Trial 99: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:50:39,133 - INFO - 🔁 Trial 100: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:54:32,119 - INFO - 🔁 Trial 101: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 04:58:36,920 - INFO - 🔁 Trial 102: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:02:52,166 - INFO - 🔁 Trial 103: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:07:35,422 - INFO - 🔁 Trial 104: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:10:59,231 - INFO - 🔁 Trial 105: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:11:29,413 - INFO - 🔁 Trial 106: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:17:31,290 - INFO - 🔁 Trial 107: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:20:46,124 - INFO - 🔁 Trial 108: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:24:42,336 - INFO - 🔁 Trial 109: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:31:05,173 - INFO - 🔁 Trial 110: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:32:00,264 - INFO - 🔁 Trial 111: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:35:47,139 - INFO - 🔁 Trial 112: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:36:49,184 - INFO - 🔁 Trial 113: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:37:27,168 - INFO - 🔁 Trial 114: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:41:05,149 - INFO - 🔁 Trial 115: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:42:12,296 - INFO - 🔁 Trial 116: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:47:07,469 - INFO - 🔁 Trial 117: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:49:36,087 - INFO - 🔁 Trial 118: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 05:52:24,815 - INFO - 🔁 Trial 119: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:03:14,612 - INFO - 🔁 Trial 120: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:05:43,786 - INFO - 🔁 Trial 121: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:07:43,741 - INFO - 🔁 Trial 122: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:10:04,210 - INFO - 🔁 Trial 123: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:14:24,963 - INFO - 🔁 Trial 124: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:20:48,774 - INFO - 🔁 Trial 125: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:21:33,880 - INFO - 🔁 Trial 126: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:25:16,864 - INFO - 🔁 Trial 127: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:26:11,699 - INFO - 🔁 Trial 128: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:32:51,105 - INFO - 🔁 Trial 129: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:36:04,728 - INFO - 🔁 Trial 130: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:37:32,539 - INFO - 🔁 Trial 131: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:39:23,151 - INFO - 🔁 Trial 132: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:40:43,017 - INFO - 🔁 Trial 133: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:41:53,248 - INFO - 🔁 Trial 134: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:43:36,350 - INFO - 🔁 Trial 135: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:49:07,913 - INFO - 🔁 Trial 136: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:53:51,674 - INFO - 🔁 Trial 137: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 06:55:21,840 - INFO - 🔁 Trial 138: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:05:40,415 - INFO - 🔁 Trial 139: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:09:25,846 - INFO - 🔁 Trial 140: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:11:54,475 - INFO - 🔁 Trial 141: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:15:54,558 - INFO - 🔁 Trial 142: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:18:40,311 - INFO - 🔁 Trial 143: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:21:46,791 - INFO - 🔁 Trial 144: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:24:41,348 - INFO - 🔁 Trial 145: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:28:48,809 - INFO - 🔁 Trial 146: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:35:14,653 - INFO - 🔁 Trial 147: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:37:55,364 - INFO - 🔁 Trial 148: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:39:02,242 - INFO - 🔁 Trial 149: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:42:03,437 - INFO - 🔁 Trial 150: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:42:32,214 - INFO - 🔁 Trial 151: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:42:53,826 - INFO - 🔁 Trial 152: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:43:29,870 - INFO - 🔁 Trial 153: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:43:52,610 - INFO - 🔁 Trial 154: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:44:40,643 - INFO - 🔁 Trial 155: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:51:03,088 - INFO - 🔁 Trial 156: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 07:53:06,728 - INFO - 🔁 Trial 157: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:00:06,164 - INFO - 🔁 Trial 158: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:03:59,963 - INFO - 🔁 Trial 159: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:04:40,317 - INFO - 🔁 Trial 160: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:08:41,753 - INFO - 🔁 Trial 161: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:12:14,837 - INFO - 🔁 Trial 162: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:15:19,257 - INFO - 🔁 Trial 163: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:17:34,407 - INFO - 🔁 Trial 164: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:21:14,273 - INFO - 🔁 Trial 165: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:25:37,425 - INFO - 🔁 Trial 166: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:27:49,729 - INFO - 🔁 Trial 167: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:39:02,107 - INFO - 🔁 Trial 168: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:39:16,521 - INFO - 🔁 Trial 169: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:44:12,077 - INFO - 🔁 Trial 170: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:45:21,843 - INFO - 🔁 Trial 171: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:46:26,463 - INFO - 🔁 Trial 172: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:47:42,465 - INFO - 🔁 Trial 173: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:48:39,054 - INFO - 🔁 Trial 174: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:52:10,560 - INFO - 🔁 Trial 175: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:56:23,823 - INFO - 🔁 Trial 176: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 08:58:16,466 - INFO - 🔁 Trial 177: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:01:59,267 - INFO - 🔁 Trial 178: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:03:11,923 - INFO - 🔁 Trial 179: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:13:14,481 - INFO - 🔁 Trial 180: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:13:26,528 - INFO - 🔁 Trial 181: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:15:02,230 - INFO - 🔁 Trial 182: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:15:17,857 - INFO - 🔁 Trial 183: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:15:37,182 - INFO - 🔁 Trial 184: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:16:29,407 - INFO - 🔁 Trial 185: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:17:18,118 - INFO - 🔁 Trial 186: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:20:12,305 - INFO - 🔁 Trial 187: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:31:46,905 - INFO - 🔁 Trial 188: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:33:53,814 - INFO - 🔁 Trial 189: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:36:28,908 - INFO - 🔁 Trial 190: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:41:12,571 - INFO - 🔁 Trial 191: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:45:32,190 - INFO - 🔁 Trial 192: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:50:04,204 - INFO - 🔁 Trial 193: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:52:18,581 - INFO - 🔁 Trial 194: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 09:56:04,194 - INFO - 🔁 Trial 195: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 10:05:19,073 - INFO - 🔁 Trial 196: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 10:08:45,994 - INFO - 🔁 Trial 197: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 10:15:10,279 - INFO - 🔁 Trial 198: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 10:17:46,194 - INFO - 🔁 Trial 199: Best RMSE=inf, Best R2=0.8233, Best Params={'torch_mlp_hidden_dim': 169, 'torch_mlp_lr': 0.0013206581740946614, 'torch_mlp_batch_size': 128, 'torch_mlp_epochs': 125}
+2025-09-20 10:17:46,215 - ERROR - ❌ Error optimizing torch_mlp: Invalid parameter 'torch_mlp_hidden_dim' for estimator TorchMLPRegressor(device='cuda', input_dim=10). Valid parameters are: ['batch_size', 'device', 'epochs', 'hidden_dim', 'input_dim', 'lr'].
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 199, in run_optimization
+    best_model = get_models(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/base.py", line 283, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'torch_mlp_hidden_dim' for estimator TorchMLPRegressor(device='cuda', input_dim=10). Valid parameters are: ['batch_size', 'device', 'epochs', 'hidden_dim', 'input_dim', 'lr'].
+2025-09-20 10:17:46,458 - INFO - 🚀 Starting optimization for: mlp
+2025-09-20 10:17:46,461 - ERROR - ❌ Error optimizing mlp: Invalid parameter 'n_layers' for estimator MLPRegressor(). Valid parameters are: ['batch_size', 'epochs', 'hidden_sizes', 'loss', 'lr', 'verbose'].
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 196, in run_optimization
+    study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 179, in objective
+    model = model_dict[model_name].set_params(**params)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/base.py", line 283, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'n_layers' for estimator MLPRegressor(). Valid parameters are: ['batch_size', 'epochs', 'hidden_sizes', 'loss', 'lr', 'verbose'].
+2025-09-20 10:17:46,461 - INFO - 🚀 Starting optimization for: lstm
+2025-09-20 10:17:46,462 - ERROR - ❌ Error optimizing lstm: Invalid parameter 'n_layers' for estimator LSTMRegressor(). Valid parameters are: ['batch_size', 'epochs', 'hidden_size', 'loss', 'lr', 'num_layers', 'verbose'].
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 196, in run_optimization
+    study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 179, in objective
+    model = model_dict[model_name].set_params(**params)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/base.py", line 283, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'n_layers' for estimator LSTMRegressor(). Valid parameters are: ['batch_size', 'epochs', 'hidden_size', 'loss', 'lr', 'num_layers', 'verbose'].
+2025-09-20 10:17:46,463 - INFO - 🚀 Starting optimization for: gru
+2025-09-20 10:17:46,464 - ERROR - ❌ Error optimizing gru: Invalid parameter 'dropout' for estimator GRURegressor(hidden_size=183, num_layers=3). Valid parameters are: ['batch_size', 'epochs', 'hidden_size', 'loss', 'lr', 'num_layers', 'verbose'].
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 121, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 196, in run_optimization
+    study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 179, in objective
+    model = model_dict[model_name].set_params(**params)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/base.py", line 283, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'dropout' for estimator GRURegressor(hidden_size=183, num_layers=3). Valid parameters are: ['batch_size', 'epochs', 'hidden_size', 'loss', 'lr', 'num_layers', 'verbose'].
+2025-09-20 10:17:46,464 - INFO - 📈 Generating final analysis and plots
