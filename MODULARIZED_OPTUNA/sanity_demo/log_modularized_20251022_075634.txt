@@ -1,0 +1,285 @@
+2025-10-22 07:56:34,820 - INFO - 📋 Starting Modularized Optuna Pipeline
+2025-10-22 07:56:34,820 - INFO - 📦 Original shape: (15000, 11)
+2025-10-22 07:56:34,820 - INFO - 🧹 Cleaning dataset (dropping NaNs)
+2025-10-22 07:56:34,821 - INFO - 📐 Performing train-test split.
+2025-10-22 07:56:34,824 - INFO - ✅ After dropna: (14694, 11)
+2025-10-22 07:56:34,825 - INFO - 🩺 Running pre-optimization sanity checks
+2025-10-22 07:56:46,860 - INFO - 🩺 Sanity check torch_mlp passed — R2=0.5385, RMSE=0.200068
+2025-10-22 07:56:46,931 - ERROR - ❌ Sanity check failed for mlp
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 88, in sanity_check_models
+    scores = cross_validate(model, X, y, scoring=scoring, cv=cv, n_jobs=None)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 53, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32)
+ValueError: could not determine the shape of object type 'DataFrame'
+
+2025-10-22 07:56:46,938 - ERROR - ❌ Sanity check failed for lstm
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 88, in sanity_check_models
+    scores = cross_validate(model, X, y, scoring=scoring, cv=cv, n_jobs=None)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 123, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
+ValueError: could not determine the shape of object type 'DataFrame'
+
+2025-10-22 07:56:46,944 - ERROR - ❌ Sanity check failed for gru
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 88, in sanity_check_models
+    scores = cross_validate(model, X, y, scoring=scoring, cv=cv, n_jobs=None)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 199, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
+ValueError: could not determine the shape of object type 'DataFrame'
+
+2025-10-22 07:56:46,945 - INFO - 📝 Sanity check summary saved to MODULARIZED_OPTUNA/sanity_demo/precheck_results.json
+2025-10-22 07:56:46,945 - INFO - 🚀 Starting optimization for: torch_mlp
+2025-10-22 07:58:27,627 - INFO - 🔁 Trial 0: Best RMSE=inf, Best R2=0.6238, Best Params={'torch_mlp_hidden_dim': 82, 'torch_mlp_lr': 2.8522302504967208e-05, 'torch_mlp_batch_size': 64, 'torch_mlp_epochs': 183}
+2025-10-22 08:00:03,224 - INFO - 🔧 Best parameters for torch_mlp: {'hidden_dim': 82, 'lr': 2.8522302504967208e-05, 'batch_size': 64, 'epochs': 183}
+2025-10-22 08:00:03,233 - INFO - 📊 torch_mlp evaluation metrics:
+2025-10-22 08:00:03,233 - INFO -    • R²: 0.7122
+2025-10-22 08:00:03,233 - INFO -    • RMSE: 0.156982
+2025-10-22 08:00:03,233 - INFO -    • MAE: 0.121708
+2025-10-22 08:00:03,233 - INFO -    • Inference Time: 0.1459 ± 0.0000 ms
+2025-10-22 08:00:03,886 - INFO - ✅ Finished evaluation for: torch_mlp
+2025-10-22 08:00:03,886 - INFO - 🚀 Starting optimization for: mlp
+2025-10-22 08:00:03,890 - ERROR - ❌ Error optimizing mlp: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 53, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32)
+ValueError: could not determine the shape of object type 'DataFrame'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 138, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 248, in run_optimization
+    study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 233, in objective
+    r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 53, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32)
+ValueError: could not determine the shape of object type 'DataFrame'
+
+2025-10-22 08:00:03,890 - INFO - 🚀 Starting optimization for: lstm
+2025-10-22 08:00:03,893 - ERROR - ❌ Error optimizing lstm: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 123, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
+ValueError: could not determine the shape of object type 'DataFrame'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 138, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 248, in run_optimization
+    study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 233, in objective
+    r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 123, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
+ValueError: could not determine the shape of object type 'DataFrame'
+
+2025-10-22 08:00:03,893 - INFO - 🚀 Starting optimization for: gru
+2025-10-22 08:00:03,896 - ERROR - ❌ Error optimizing gru: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 199, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
+ValueError: could not determine the shape of object type 'DataFrame'
+Traceback (most recent call last):
+  File "/home/lmorenom/BRICENO_MODULARIZED/main.py", line 138, in run_optuna_pipeline
+    best_model, study, cv_r2, cv_rmse = run_optimization(
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 248, in run_optimization
+    study.optimize(objective, n_trials=n_trials, callbacks=[update_progress_bar])
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/lmorenom/BRICENO_MODULARIZED/optimize.py", line 233, in objective
+    r2_scores = cross_val_score(model, X, y, scoring="r2", cv=cv)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 3 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/lmorenom/BRICENO_MODULARIZED/models.py", line 199, in fit
+    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
+ValueError: could not determine the shape of object type 'DataFrame'
+
+2025-10-22 08:00:03,896 - INFO - 📈 Generating final analysis and plots
+2025-10-22 08:00:04,177 - INFO - 📋 EXECUTIVE SUMMARY:
+2025-10-22 08:00:04,178 - INFO - ----------------------------------------
+2025-10-22 08:00:04,178 - INFO - 🏆 Champion Model: torch_mlp
+2025-10-22 08:00:04,178 - INFO -    • R² Score: 71.22%
+2025-10-22 08:00:04,178 - INFO -    • RMSE: 0.156982
+2025-10-22 08:00:04,178 - INFO -    • MAE: 0.121708
+2025-10-22 08:00:04,178 - INFO -    • Inference Time: 0.1459 ± 0.0000 ms
+2025-10-22 08:00:04,178 - INFO - 
+📊 KEY INSIGHTS:
+2025-10-22 08:00:04,178 - INFO - ----------------------------------------
+2025-10-22 08:00:04,178 - INFO - • Total models evaluated: 4
+2025-10-22 08:00:04,178 - INFO - • Hyperparameter trials per model: 1
+2025-10-22 08:00:04,178 - INFO - • Cross-validation folds: 3
+2025-10-22 08:00:04,178 - INFO - • Test set size: 2939 samples (20.0% of total data)
+2025-10-22 08:00:04,178 - INFO - • Fastest model: torch_mlp (0.1459 ms)
+2025-10-22 08:00:04,178 - INFO - • Most accurate model: torch_mlp (RMSE: 0.156982)
+2025-10-22 08:00:04,178 - INFO - 
+💡 RECOMMENDATIONS:
+2025-10-22 08:00:04,178 - INFO - ----------------------------------------
+2025-10-22 08:00:04,178 - INFO - ✅ The torch_mlp model shows the best overall performance
+2025-10-22 08:00:04,178 - INFO -    → Recommended for production deployment

@@ -5,6 +5,7 @@ from sklearn.neural_network import MLPRegressor as SklearnMLPRegressor
 from sklearn.base import BaseEstimator, RegressorMixin
 import xgboost as xgb
 import lightgbm as lgb
+import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
@@ -17,7 +18,12 @@ try:  # pragma: no cover - torch is optional
 except Exception:  # torch is not available
     TorchMLPRegressor = None
 
+def _to_numpy(array_like):
+    """Convert array-like objects (e.g., pandas DataFrame/Series) to numpy arrays."""
 
+    if hasattr(array_like, "to_numpy"):
+        return array_like.to_numpy()
+    return np.asarray(array_like)
 
 
 class MLPRegressor(BaseEstimator, RegressorMixin):
@@ -50,8 +56,10 @@ class MLPRegressor(BaseEstimator, RegressorMixin):
         self.model_ = nn.Sequential(*layers)
 
     def fit(self, X, y):
-        X_tensor = torch.tensor(X, dtype=torch.float32)
-        y_tensor = torch.tensor(y, dtype=torch.float32).view(-1, 1)
+        X_array = _to_numpy(X)
+        y_array = _to_numpy(y)
+        X_tensor = torch.tensor(X_array, dtype=torch.float32)
+        y_tensor = torch.tensor(y_array, dtype=torch.float32).view(-1, 1)
         self._build_model(X_tensor.shape[1])
         self.device_ = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model_.to(self.device_)
@@ -84,7 +92,8 @@ class MLPRegressor(BaseEstimator, RegressorMixin):
     def predict(self, X):
         self.model_.eval()
         with torch.no_grad():
-            X_tensor = torch.tensor(X, dtype=torch.float32).to(self.device_)
+            X_array = _to_numpy(X)
+            X_tensor = torch.tensor(X_array, dtype=torch.float32).to(self.device_)
             preds = self.model_(X_tensor).cpu().numpy().flatten()
         return preds
 
@@ -120,8 +129,10 @@ class LSTMRegressor(BaseEstimator, RegressorMixin):
         self.fc_ = nn.Linear(self.hidden_size, 1)
 
     def fit(self, X, y):
-        X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
-        y_tensor = torch.tensor(y, dtype=torch.float32).view(-1, 1)
+        X_array = _to_numpy(X)
+        y_array = _to_numpy(y)
+        X_tensor = torch.tensor(X_array, dtype=torch.float32).unsqueeze(-1)
+        y_tensor = torch.tensor(y_array, dtype=torch.float32).view(-1, 1)
 
         self._init_model(X_tensor.shape[2])
         self.device_ = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -159,7 +170,8 @@ class LSTMRegressor(BaseEstimator, RegressorMixin):
         self.lstm_.eval()
         self.fc_.eval()
         with torch.no_grad():
-            X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1).to(self.device_)
+            X_array = _to_numpy(X)
+            X_tensor = torch.tensor(X_array, dtype=torch.float32).unsqueeze(-1).to(self.device_)
             out, _ = self.lstm_(X_tensor)
             out = self.fc_(out[:, -1, :])
         return out.cpu().numpy().flatten()
@@ -196,8 +208,10 @@ class GRURegressor(BaseEstimator, RegressorMixin):
         self.fc_ = nn.Linear(self.hidden_size, 1)
 
     def fit(self, X, y):
-        X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)
-        y_tensor = torch.tensor(y, dtype=torch.float32).view(-1, 1)
+        X_array = _to_numpy(X)
+        y_array = _to_numpy(y)
+        X_tensor = torch.tensor(X_array, dtype=torch.float32).unsqueeze(-1)
+        y_tensor = torch.tensor(y_array, dtype=torch.float32).view(-1, 1)
 
         self._init_model(X_tensor.shape[2])
         self.device_ = torch.device("cuda" if torch.cuda.is_available() else "cpu")

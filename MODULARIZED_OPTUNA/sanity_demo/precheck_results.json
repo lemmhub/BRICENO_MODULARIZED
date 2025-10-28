@@ -1,0 +1,15 @@
+{
+  "torch_mlp": {
+    "r2_mean": 0.5385408058650457,
+    "rmse_mean": 0.20006826036406253
+  },
+  "mlp": {
+    "error": "\nAll the 3 fits failed.\nIt is very likely that your model is misconfigured.\nYou can try to debug the error by setting error_score='raise'.\n\nBelow are more details about the failures:\n--------------------------------------------------------------------------------\n3 fits failed with the following error:\nTraceback (most recent call last):\n  File \"/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py\", line 866, in _fit_and_score\n    estimator.fit(X_train, y_train, **fit_params)\n  File \"/home/lmorenom/BRICENO_MODULARIZED/models.py\", line 53, in fit\n    X_tensor = torch.tensor(X, dtype=torch.float32)\nValueError: could not determine the shape of object type 'DataFrame'\n"
+  },
+  "lstm": {
+    "error": "\nAll the 3 fits failed.\nIt is very likely that your model is misconfigured.\nYou can try to debug the error by setting error_score='raise'.\n\nBelow are more details about the failures:\n--------------------------------------------------------------------------------\n3 fits failed with the following error:\nTraceback (most recent call last):\n  File \"/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py\", line 866, in _fit_and_score\n    estimator.fit(X_train, y_train, **fit_params)\n  File \"/home/lmorenom/BRICENO_MODULARIZED/models.py\", line 123, in fit\n    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)\nValueError: could not determine the shape of object type 'DataFrame'\n"
+  },
+  "gru": {
+    "error": "\nAll the 3 fits failed.\nIt is very likely that your model is misconfigured.\nYou can try to debug the error by setting error_score='raise'.\n\nBelow are more details about the failures:\n--------------------------------------------------------------------------------\n3 fits failed with the following error:\nTraceback (most recent call last):\n  File \"/home/lmorenom/.optuna_workflow/lib/python3.10/site-packages/sklearn/model_selection/_validation.py\", line 866, in _fit_and_score\n    estimator.fit(X_train, y_train, **fit_params)\n  File \"/home/lmorenom/BRICENO_MODULARIZED/models.py\", line 199, in fit\n    X_tensor = torch.tensor(X, dtype=torch.float32).unsqueeze(-1)\nValueError: could not determine the shape of object type 'DataFrame'\n"
+  }
+}
